@@ -713,8 +713,8 @@ class Browser:
                         pass
                     except (Exception,):
                         raise
-            self._process = None
-            self._process_pid = None
+        self._process = None
+        self._process_pid = None
 
     def __await__(self):
         # return ( asyncio.sleep(0)).__await__()
