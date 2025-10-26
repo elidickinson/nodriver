@@ -120,7 +120,7 @@ class Browser:
         self._process = None
         self._process_pid = None
         self._keep_user_data_dir = None
-        self._is_updating = asyncio.Event()
+        self._update_targets_lock = asyncio.Lock()
         self.connection: Connection = None
         logger.debug("Session object initialized: %s" % vars(self))
 
@@ -559,31 +559,31 @@ class Browser:
         return info
 
     async def update_targets(self):
-
-        targets: List[cdp.target.TargetInfo]
-        targets = await self._get_targets()
-        target_ids = [t.target_id for t in targets]
-        existing_target_ids = [t.target_id for t in self.targets]
-        for t in targets:
-            for existing_tab in self.targets:
-                existing_target = existing_tab.target
-                if existing_target.target_id == t.target_id:
-                    existing_tab.target.__dict__.update(t.__dict__)
-                    break
-            else:
-                self.targets.append(
-                    Connection(
-                        (
-                            f"ws://{self.config.host}:{self.config.port}"
-                            f"/devtools/page"  # all types are 'page' somehow
-                            f"/{t.target_id}"
-                        ),
-                        target=t,
-                        browser=self,
+        async with self._update_targets_lock:
+            targets: List[cdp.target.TargetInfo]
+            targets = await self._get_targets()
+            target_ids = [t.target_id for t in targets]
+            existing_target_ids = [t.target_id for t in self.targets]
+            for t in targets:
+                for existing_tab in self.targets:
+                    existing_target = existing_tab.target
+                    if existing_target.target_id == t.target_id:
+                        existing_tab.target.__dict__.update(t.__dict__)
+                        break
+                else:
+                    self.targets.append(
+                        Connection(
+                            (
+                                f"ws://{self.config.host}:{self.config.port}"
+                                f"/devtools/page"  # all types are 'page' somehow
+                                f"/{t.target_id}"
+                            ),
+                            target=t,
+                            browser=self,
+                        )
                     )
-                )
 
-        await asyncio.sleep(0)
+            await asyncio.sleep(0)
 
     async def __aenter__(self):
         return self
