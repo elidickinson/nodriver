@@ -293,7 +293,7 @@ class Connection(metaclass=CantTouchThis):
         if handler:
             for event, callbacks in self.handlers.items():
                 for cb in callbacks:
-                    if cb == self:
+                    if cb == handler:
                         self.handlers[event].remove(handler)
 
         if not isinstance(event_type_or_domain, list):
