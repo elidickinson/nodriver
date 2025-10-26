@@ -368,6 +368,19 @@ class Connection(metaclass=CantTouchThis):
         """:meta private:"""
         await self.close()
 
+    def _handle_handler_task_result(self, task: asyncio.Task):
+        """
+        Callback to handle exceptions from async handler tasks.
+        """
+        try:
+            task.result()
+        except Exception as e:
+            logger.warning(
+                "exception in async handler task => %s",
+                e,
+                exc_info=True,
+            )
+
     async def _register_handlers(self):
         """
         ensure that for current (event) handlers, the corresponding
@@ -478,10 +491,11 @@ class Connection(metaclass=CantTouchThis):
                                     callback
                                 ):
                                     try:
-
-                                        asyncio.create_task(callback(event, self))
+                                        task = asyncio.create_task(callback(event, self))
+                                        task.add_done_callback(self._handle_handler_task_result)
                                     except TypeError as e:
-                                        asyncio.create_task(callback(event))
+                                        task = asyncio.create_task(callback(event))
+                                        task.add_done_callback(self._handle_handler_task_result)
                                 else:
                                     try:
                                         callback(event, self)
