@@ -397,7 +397,7 @@ class Tab(Connection):
                     asyncio.create_task(self.browser.update_targets()),
                     asyncio.create_task(asyncio.sleep(t)),
                 ],
-                return_when=asyncio.FIRST_COMPLETED,
+                return_when=asyncio.ALL_COMPLETED,
             )
 
     async def xpath(
@@ -912,32 +912,32 @@ class Tab(Connection):
                                                                tmp[k] = null;
                                                                continue
                                                            }
-                        
+
                                                            if (_typesB.includes(typeof obj[k])) {
                                                                tmp[k] = obj[k]
                                                                continue
                                                            }
-                        
+
                                                            try {
                                                                if (typeof obj[k] === 'function') {
                                                                    tmp[k] = obj[k].toString()
                                                                    continue
                                                                }
-                        
-                        
+
+
                                                                if (typeof obj[k] === 'object') {
                                                                    tmp[k] = ___dump(obj[k], _d + 1);
                                                                    continue
                                                                }
-                        
-                        
+
+
                                                            } catch (e) {}
-                        
+
                                                            try {
                                                                tmp[k] = JSON.stringify(obj[k])
                                                                continue
                                                            } catch (e) {
-                        
+
                                                            }
                                                            try {
                                                                tmp[k] = obj[k].toString();
@@ -946,7 +946,7 @@ class Tab(Connection):
                                                        }
                                                        return tmp
                                                    }
-                        
+
                                                    function ___dumpY(obj) {
                                                        var objKeys = (obj) => {
                                                            var [target, result] = [obj, []];
@@ -958,7 +958,7 @@ class Tab(Connection):
                                                        }
                                                        return Object.fromEntries(
                                                            objKeys(obj).map(_ => [_, ___dump(obj[_])]))
-                        
+
                                                    }
                                                    ___dumpY( %s )
                                            """
@@ -1219,12 +1219,9 @@ class Tab(Connection):
             )
         )
 
-    async def wait(self, t: Union[int, float] = None):
+    async def wait(self, t: Union[int, float] = 0.5):
 
         # await self.browser.wait()
-
-        loop = asyncio.get_running_loop()
-        start = loop.time()
         event = asyncio.Event()
         wait_events = [
             cdp.page.FrameStoppedLoading,
@@ -1238,26 +1235,18 @@ class Tab(Connection):
 
         self.add_handler(wait_events, handler=handler)
         try:
-            if not t:
-                t = 0.5
-                done, pending = await asyncio.wait(
-                    [
-                        asyncio.ensure_future(event.wait()),
-                        asyncio.ensure_future(asyncio.sleep(t)),
-                    ],
-                    return_when=asyncio.FIRST_COMPLETED,
-                )
+            # wait for a wait_events event to fire for up to t seconds
+            done, pending = await asyncio.wait(
+                [
+                    asyncio.ensure_future(event.wait()),
+                    asyncio.ensure_future(asyncio.sleep(t)),
+                ],
+                return_when=asyncio.FIRST_COMPLETED,
+            )
 
-                [p.cancel() for p in pending]
-
+            [p.cancel() for p in pending]
         finally:
             self.remove_handler(wait_events, handler=handler)
-        #         await asyncio.wait_for()
-        #     except asyncio.TimeoutError:
-        #         if isinstance(t, (int, float)):
-        #             # explicit time is given, which is now passed
-        #             # so bail out early
-        #             return
 
     def __await__(self):
         return self.wait().__await__()
@@ -1706,7 +1695,7 @@ class Tab(Connection):
                 template_location function needs the computer vision library "opencv-python" installed
                 to install:
                 pip install opencv-python
-            
+
             """
             )
             return
@@ -1953,9 +1942,9 @@ class Tab(Connection):
                 _d.style = `{0:s}`;
                 _d.id = `{1:s}`;
                 document.body.insertAdjacentElement('afterBegin', _d);
-    
+
                 setTimeout( () => document.getElementById('{1:s}').remove(), {2:d});
-    
+
             """.format(
                 style, secrets.token_hex(8), int(duration * 1000)
             )
