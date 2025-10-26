@@ -132,14 +132,22 @@ def get_registered_instances():
 def free_port() -> int:
     """
     Determines a free port using sockets.
+
+    Note: There is a small race condition window between when this function
+    returns and when the caller binds to the port. Another process could
+    potentially grab the port in that window. Callers should handle
+    port-in-use errors gracefully.
     """
     import socket
 
     free_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    free_socket.bind(("127.0.0.1", 0))
-    free_socket.listen(5)
-    port: int = free_socket.getsockname()[1]
-    free_socket.close()
+    free_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    try:
+        free_socket.bind(("127.0.0.1", 0))
+        free_socket.listen(5)
+        port: int = free_socket.getsockname()[1]
+    finally:
+        free_socket.close()
     return port
 
 
