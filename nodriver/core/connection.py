@@ -523,7 +523,7 @@ class Connection(metaclass=CantTouchThis):
             the_id = next(self.__count__)
             tx.id = the_id
             self.mapper[the_id] = tx
-        asyncio.create_task(self.websocket.send(tx.message))
+        await self.websocket.send(tx.message)
         return await tx
 
     async def _send_oneshot(self, cdp_obj):
