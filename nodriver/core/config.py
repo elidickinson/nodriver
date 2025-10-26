@@ -162,9 +162,14 @@ class Config:
 
         if path.is_file():
             tf = tempfile.mkdtemp(prefix=f"extension_", suffix=secrets.token_hex(4))
-            with zipfile.ZipFile(path, "r") as z:
-                z.extractall(tf)
-                self._extensions.append(tf)
+            try:
+                with zipfile.ZipFile(path, "r") as z:
+                    z.extractall(tf)
+                    self._extensions.append(tf)
+            except Exception:
+                import shutil
+                shutil.rmtree(tf, ignore_errors=True)
+                raise
 
         elif path.is_dir():
             for item in path.rglob("manifest.*"):
