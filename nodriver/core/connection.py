@@ -219,6 +219,7 @@ class Connection(metaclass=CantTouchThis):
         self._listener_task = None
         self._event = asyncio.Event()
         self._lock = asyncio.Lock()
+        self._connection_lock = asyncio.Lock()
         self.__count__ = itertools.count(0)
         self.__dict__.update(**kwargs)
 
@@ -320,31 +321,33 @@ class Connection(metaclass=CantTouchThis):
         :param kw:
         :return:
         """
-        if not self.websocket or bool(self.websocket.close_code):
-            try:
-                self._websocket = await websockets.connect(
-                    self.websocket_url,
-                    ping_timeout=PING_TIMEOUT,
-                    max_size=MAX_SIZE,
-                )
-                self._listener_task = asyncio.ensure_future(self._listener())
+        async with self._connection_lock:
+            if not self.websocket or bool(self.websocket.close_code):
+                try:
+                    self._websocket = await websockets.connect(
+                        self.websocket_url,
+                        ping_timeout=PING_TIMEOUT,
+                        max_size=MAX_SIZE,
+                    )
+                    self._listener_task = asyncio.ensure_future(self._listener())
 
-            except (Exception,) as e:
-                logger.debug("exception during opening of websocket : %s", e)
-                raise
+                except (Exception,) as e:
+                    logger.debug("exception during opening of websocket : %s", e)
+                    raise
 
-            await self._register_handlers()
+                await self._register_handlers()
 
     async def disconnect(self):
         """
         closes the websocket connection. should not be called manually by users.
         """
-        if self._listener_task:
-            self._listener_task.cancel()
-        if self.websocket:
-            self.enabled_domains.clear()
-            await self.websocket.close()
-            logger.debug("\n❌ closed websocket connection to %s", self.websocket_url)
+        async with self._connection_lock:
+            if self._listener_task:
+                self._listener_task.cancel()
+            if self.websocket:
+                self.enabled_domains.clear()
+                await self.websocket.close()
+                logger.debug("\n❌ closed websocket connection to %s", self.websocket_url)
 
     def __getattr__(self, item):
         """:meta private:"""
@@ -440,7 +443,8 @@ class Connection(metaclass=CantTouchThis):
                 message = json.loads(raw)
                 seen_one = True
                 if "id" in message:
-                    tx: Transaction = self.mapper.pop(message["id"])
+                    async with self._lock:
+                        tx: Transaction = self.mapper.pop(message["id"])
                     tx(**message)
                     logger.debug("got answer for (message_id:%d) => %s", tx.id, message)
                 else:
@@ -511,9 +515,10 @@ class Connection(metaclass=CantTouchThis):
         if not _is_update:
             await self._register_handlers()
         tx = Transaction(cdp_obj)
-        the_id = next(self.__count__)
-        tx.id = the_id
-        self.mapper[the_id] = tx
+        async with self._lock:
+            the_id = next(self.__count__)
+            tx.id = the_id
+            self.mapper[the_id] = tx
         asyncio.create_task(self.websocket.send(tx.message))
         return await tx
 
