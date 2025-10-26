@@ -4570,8 +4570,20 @@ class ProxyForwarder:
     def proxy_server(self):
         return self._proxy_server
 
+    def _handle_listen_task_result(self, task: asyncio.Task):
+        """Handle exceptions from the background listen task."""
+        try:
+            task.result()
+        except Exception as e:
+            logger.error(
+                "proxy forwarder listen task failed: %s",
+                e,
+                exc_info=True,
+            )
+
     def __init__(self, proxy_server):
         self._proxy_server = None
+        self._listen_task = None
 
         url = urlparse(proxy_server)
         if not url.scheme:
@@ -4601,7 +4613,8 @@ class ProxyForwarder:
                 )
                 logger.info("starting forward proxy on %s:%d" % (self.host, self.port))
                 logger.info("which forwards to %s" % proxy_server)
-                asyncio.ensure_future(self.listen())
+                self._listen_task = asyncio.create_task(self.listen())
+                self._listen_task.add_done_callback(self._handle_listen_task_result)
 
     async def listen(self):
         self.server = await asyncio.start_server(
