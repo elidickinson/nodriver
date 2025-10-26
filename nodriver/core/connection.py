@@ -344,6 +344,10 @@ class Connection(metaclass=CantTouchThis):
         async with self._connection_lock:
             if self._listener_task:
                 self._listener_task.cancel()
+                try:
+                    await self._listener_task
+                except asyncio.CancelledError:
+                    pass
             if self.websocket:
                 self.enabled_domains.clear()
                 await self.websocket.close()
