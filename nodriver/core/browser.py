@@ -411,15 +411,15 @@ class Browser:
         self._http = HTTPApi((self.config.host, self.config.port))
         util.get_registered_instances().add(self)
         await asyncio.sleep(0.25)
-        for _ in range(5):
+        for attempt in range(10):
             try:
                 self.info = ContraDict(await self._http.get("version"), silent=True)
-            except (Exception,):
-                if _ == 4:
-                    logger.debug("could not start", exc_info=True)
-                await self.sleep(0.5)
-            else:
                 break
+            except Exception:
+                if attempt == 9:
+                    logger.debug("could not start browser after multiple attempts", exc_info=True)
+                    break
+                await self.sleep(0.5)
 
         if not self.info:
             raise Exception(
@@ -429,7 +429,7 @@ class Browser:
                 Failed to connect to browser
                 ---------------------
                 One of the causes could be when you are running as root.
-                In that case you need to pass no_sandbox=True 
+                In that case you need to pass no_sandbox=True
                 """
                 )
             )
