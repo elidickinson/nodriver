@@ -1,6 +1,15 @@
 NODRIVER
 =======================
 
+> **Fork Improvements**
+>
+> This fork includes stability and reliability enhancements:
+> - Race condition fixes in connection handling, target updates, and websocket messaging
+> - Proper exception tracking and logging in async tasks and proxy forwarding
+> - Fixed `tab.sleep()`, `tab.wait()`, and event handler removal bugs
+> - Improved resource cleanup for browser shutdown, task cancellation, and temp directories
+> - Port reuse optimization and more resilient browser startup
+
 ### nodriver provides next level async webscraping and browser automation library for python with an easy interface which Just Makes Sense ™
 
 
