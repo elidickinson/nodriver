@@ -13,6 +13,7 @@ import logging
 import os
 import pathlib
 import pickle
+import subprocess
 import urllib.parse
 import urllib.request
 import warnings
@@ -671,6 +672,7 @@ class Browser:
                     del self._i
 
     def stop(self):
+        # Close websocket connection
         try:
             loop = asyncio.get_running_loop()
             if self.connection:
@@ -682,47 +684,41 @@ class Browser:
                 try:
                     asyncio.run(self.connection.disconnect())
                     logger.debug("closed the connection using asyncio.run()")
-                except Exception:
-                    pass
+                except (ConnectionError, OSError) as e:
+                    logger.debug("expected error during disconnect: %s", e)
 
-        for _ in range(3):
+        # Terminate browser process
+        if not self._process:
+            # Remove from registry to allow garbage collection
+            util.get_registered_instances().discard(self)
+            return
+
+        pid = self._process_pid
+
+        try:
+            # Try graceful shutdown first
+            self._process.terminate()
+            self._process.wait(timeout=5)
+            logger.info("terminated browser with pid %d successfully" % pid)
+        except subprocess.TimeoutExpired:
+            # Graceful shutdown timed out, force kill
             try:
-                self._process.terminate()
-                logger.info(
-                    "terminated browser with pid %d successfully" % self._process.pid
-                )
-                break
-            except (Exception,):
-                try:
-                    self._process.kill()
-                    logger.info(
-                        "killed browser with pid %d successfully" % self._process.pid
-                    )
-                    break
-                except (Exception,):
-                    try:
-                        if hasattr(self, "browser_process_pid"):
-                            os.kill(self._process_pid, 15)
-                            logger.info(
-                                "killed browser with pid %d using signal 15 successfully"
-                                % self._process.pid
-                            )
-                            break
-                    except (TypeError,):
-                        logger.info("typerror", exc_info=True)
-                        pass
-                    except (PermissionError,):
-                        logger.info(
-                            "browser already stopped, or no permission to kill. skip"
-                        )
-                        pass
-                    except (ProcessLookupError,):
-                        logger.info("process lookup failure")
-                        pass
-                    except (Exception,):
-                        raise
-        self._process = None
-        self._process_pid = None
+                self._process.kill()
+                self._process.wait(timeout=3)
+                logger.info("killed browser with pid %d successfully" % pid)
+            except subprocess.TimeoutExpired:
+                logger.warning("browser process %d did not exit after kill signal" % pid)
+            except (ProcessLookupError, PermissionError, OSError) as e:
+                logger.debug("expected error during kill: %s", e)
+        except PermissionError:
+            logger.info("no permission to terminate browser process %d" % pid)
+        except (ProcessLookupError, OSError) as e:
+            logger.debug("expected error during terminate: %s", e)
+        finally:
+            self._process = None
+            self._process_pid = None
+            # Remove from registry to allow garbage collection
+            util.get_registered_instances().discard(self)
 
     def __await__(self):
         # return ( asyncio.sleep(0)).__await__()

@@ -8,6 +8,7 @@ NODRIVER
 > - Fixed concurrent domain removal in handler registration (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Fixed duplicate transaction completion race conditions (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Proper async task handling in `browser.stop()` and target update handlers
+> - Simplified `browser.stop()` with proper timeouts and registry cleanup
 > - Added `click_count` parameter to `mouse_click()` for double/triple clicks (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Improved `flash_point()` positioning accuracy (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Added `mouse_move_random()` and `send_keys_random()` for human-like automation (credit: [Connor9994/nodriver](https://github.com/Connor9994/nodriver))
