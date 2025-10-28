@@ -5,6 +5,7 @@ NODRIVER
 >
 > This fork includes stability and reliability enhancements:
 > - Race condition fixes in connection handling, target updates, and websocket messaging
+> - Fixed concurrent domain removal in handler registration (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Proper exception tracking and logging in async tasks and proxy forwarding
 > - Fixed `tab.sleep()`, `tab.wait()`, and event handler removal bugs
 > - Improved resource cleanup for browser shutdown, task cancellation, and temp directories

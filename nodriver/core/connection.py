@@ -115,6 +115,10 @@ class Transaction(asyncio.Future):
         :param response:
         :return:
         """
+        # check if already completed to avoid InvalidStateError
+        if self.done():
+            return
+
         if "error" in response:
             # set exception and bail out
             return self.set_exception(ProtocolException(response["error"]))
@@ -125,7 +129,11 @@ class Transaction(asyncio.Future):
             raise KeyError(f"key '{e.args}' not found in message: {response['result']}")
         except StopIteration as e:
             # exception value holds the parsed response
-            self.set_result(e.value)
+            try:
+                self.set_result(e.value)
+            except asyncio.InvalidStateError:
+                # race: someone beat us to completing the future
+                pass
 
     def __repr__(self):
         success = False if (self.done() and self.has_exception) else True
@@ -432,7 +440,11 @@ class Connection(metaclass=CantTouchThis):
             # we started with a copy of self.enabled_domains and removed a domain from this
             # temp variable when we registered it or saw handlers for it.
             # items still present at this point are unused and need removal
-            self.enabled_domains.remove(ed)
+            try:
+                self.enabled_domains.remove(ed)
+            except ValueError:
+                # benign race condition; domain already removed by concurrent call
+                continue
 
     async def _listener(self):
         seen_one = False
