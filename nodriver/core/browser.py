@@ -124,6 +124,13 @@ class Browser:
         self.connection: Connection = None
         logger.debug("Session object initialized: %s" % vars(self))
 
+    def _handle_background_task_result(self, task: asyncio.Task):
+        """Handle exceptions from background tasks."""
+        try:
+            task.result()
+        except Exception as e:
+            logger.error("background task failed: %s", e, exc_info=True)
+
     @property
     def websocket_url(self):
         return self.info.webSocketDebuggerUrl
@@ -230,7 +237,8 @@ class Browser:
             )
             self.targets.remove(current_tab)
 
-        asyncio.create_task(self.update_targets())
+        task = asyncio.create_task(self.update_targets())
+        task.add_done_callback(self._handle_background_task_result)
 
     async def get(
         self, url="chrome://welcome", new_tab: bool = False, new_window: bool = False
@@ -664,14 +672,14 @@ class Browser:
 
     def stop(self):
         try:
-            # asyncio.get_running_loop().create_task(self.connection.send(cdp.browser.close()))
-
-            asyncio.get_event_loop().create_task(self.connection.disconnect())
-            logger.debug("closed the connection using get_event_loop().create_task()")
+            loop = asyncio.get_running_loop()
+            if self.connection:
+                task = loop.create_task(self.connection.disconnect())
+                task.add_done_callback(self._handle_background_task_result)
+                logger.debug("closed the connection using get_running_loop().create_task()")
         except RuntimeError:
             if self.connection:
                 try:
-                    # asyncio.run(self.connection.send(cdp.browser.close()))
                     asyncio.run(self.connection.disconnect())
                     logger.debug("closed the connection using asyncio.run()")
                 except Exception:
