@@ -12,6 +12,7 @@ import inspect
 import itertools
 import json
 import logging
+import threading
 import types
 from asyncio import iscoroutine, iscoroutinefunction
 from typing import Any, Awaitable, Callable, Generator, List, TypeVar, Union
@@ -233,6 +234,9 @@ class Connection(metaclass=CantTouchThis):
         self._event = asyncio.Event()
         self._lock = asyncio.Lock()
         self._connection_lock = asyncio.Lock()
+        # threading.Lock used for handlers because add_handler/remove_handler are sync methods
+        # (API compatibility). Critical sections are <1μs so event loop blocking is negligible.
+        self._handlers_lock = threading.Lock()
         self.__count__ = itertools.count(0)
         self.__dict__.update(**kwargs)
 
@@ -277,6 +281,7 @@ class Connection(metaclass=CantTouchThis):
 
         for evt_dom in event_type_or_domain:
             if isinstance(evt_dom, types.ModuleType):
+                event_types = []
                 for name, obj in inspect.getmembers_static(evt_dom):
                     if name.isupper():
                         continue
@@ -286,10 +291,14 @@ class Connection(metaclass=CantTouchThis):
                         continue
                     if inspect.isbuiltin(obj):
                         continue
-                    self.handlers[obj].append(handler)
+                    event_types.append(obj)
+                with self._handlers_lock:
+                    for obj in event_types:
+                        self.handlers[obj].append(handler)
                 return
             else:
-                self.handlers[evt_dom].append(handler)
+                with self._handlers_lock:
+                    self.handlers[evt_dom].append(handler)
 
     def remove_handler(
         self,
@@ -304,9 +313,9 @@ class Connection(metaclass=CantTouchThis):
         :type handler:
         """
         if handler:
-            for event, callbacks in self.handlers.items():
-                for cb in callbacks:
-                    if cb == handler:
+            with self._handlers_lock:
+                for event, callbacks in list(self.handlers.items()):
+                    if handler in callbacks:
                         self.handlers[event].remove(handler)
 
         if not isinstance(event_type_or_domain, list):
@@ -314,6 +323,7 @@ class Connection(metaclass=CantTouchThis):
 
         for evt_dom in event_type_or_domain:
             if isinstance(evt_dom, types.ModuleType):
+                event_types = []
                 for name, obj in inspect.getmembers_static(evt_dom):
                     if name.isupper():
                         continue
@@ -323,10 +333,16 @@ class Connection(metaclass=CantTouchThis):
                         continue
                     if inspect.isbuiltin(obj):
                         continue
-                    del self.handlers[obj]
+                    event_types.append(obj)
+                with self._handlers_lock:
+                    for obj in event_types:
+                        if obj in self.handlers:
+                            del self.handlers[obj]
                 return
             else:
-                del self.handlers[evt_dom]
+                with self._handlers_lock:
+                    if evt_dom in self.handlers:
+                        del self.handlers[evt_dom]
 
     async def connect(self, **kw):
         """
@@ -407,10 +423,14 @@ class Connection(metaclass=CantTouchThis):
         # so at the end this variable will hold the domains that
         # are not represented by handlers, and can be removed
         enabled_domains = self.enabled_domains.copy()
-        for event_type in self.handlers.copy():
+        with self._handlers_lock:
+            handlers_snapshot = self.handlers.copy()
+            for event_type in list(handlers_snapshot.keys()):
+                if len(self.handlers.get(event_type, [])) == 0:
+                    self.handlers.pop(event_type, None)
+        for event_type in handlers_snapshot:
             domain_mod = None
-            if len(self.handlers[event_type]) == 0:
-                self.handlers.pop(event_type)
+            if event_type not in self.handlers:
                 continue
             if isinstance(event_type, type):
                 domain_mod = util.cdp_get_module(event_type.__module__)
@@ -424,32 +444,35 @@ class Connection(metaclass=CantTouchThis):
                 if domain_mod in (cdp.target, cdp.storage):
                     # by default enabled
                     continue
-                try:
-                    # we add this before sending the request, because it will
-                    # loop indefinite
-                    logger.debug("registered %s", domain_mod)
-                    self.enabled_domains.append(domain_mod)
-
-                    await self.send(domain_mod.enable(), _is_update=True)
-
-                except:  # noqa - as broad as possible, we don't want an error before the "actual" request is sent
-                    logger.debug("", exc_info=True)
+                should_enable = False
+                with self._handlers_lock:
+                    if domain_mod not in self.enabled_domains:
+                        logger.debug("registered %s", domain_mod)
+                        self.enabled_domains.append(domain_mod)
+                        should_enable = True
+                if should_enable:
                     try:
-                        self.enabled_domains.remove(domain_mod)
-                    except ValueError:
-                        # benign race condition; domain already removed by concurrent call
-                        pass
-                finally:
+                        await self.send(domain_mod.enable(), _is_update=True)
+                    except:  # noqa - as broad as possible, we don't want an error before the "actual" request is sent
+                        logger.debug("", exc_info=True)
+                        with self._handlers_lock:
+                            try:
+                                self.enabled_domains.remove(domain_mod)
+                            except ValueError:
+                                # benign race condition; domain already removed by concurrent call
+                                pass
+                    finally:
+                        continue
+        with self._handlers_lock:
+            for ed in enabled_domains:
+                # we started with a copy of self.enabled_domains and removed a domain from this
+                # temp variable when we registered it or saw handlers for it.
+                # items still present at this point are unused and need removal
+                try:
+                    self.enabled_domains.remove(ed)
+                except ValueError:
+                    # benign race condition; domain already removed by concurrent call
                     continue
-        for ed in enabled_domains:
-            # we started with a copy of self.enabled_domains and removed a domain from this
-            # temp variable when we registered it or saw handlers for it.
-            # items still present at this point are unused and need removal
-            try:
-                self.enabled_domains.remove(ed)
-            except ValueError:
-                # benign race condition; domain already removed by concurrent call
-                continue
 
     async def _listener(self):
         seen_one = False
@@ -500,11 +523,12 @@ class Connection(metaclass=CantTouchThis):
                         logger.info("some lousy KeyError %s" % e, exc_info=True)
                         continue
                     try:
-                        if type(event) in self.handlers:
-                            callbacks = self.handlers[type(event)]
-                        else:
-                            continue
-                        if not len(callbacks):
+                        with self._handlers_lock:
+                            if type(event) in self.handlers:
+                                callbacks = list(self.handlers[type(event)])
+                            else:
+                                callbacks = []
+                        if not callbacks:
                             continue
                         for callback in callbacks:
                             try:
