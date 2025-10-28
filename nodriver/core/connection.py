@@ -121,7 +121,12 @@ class Transaction(asyncio.Future):
 
         if "error" in response:
             # set exception and bail out
-            return self.set_exception(ProtocolException(response["error"]))
+            try:
+                self.set_exception(ProtocolException(response["error"]))
+            except asyncio.InvalidStateError:
+                # race: someone beat us to completing the future
+                pass
+            return
         try:
             # try to parse the result according to the py cdp docs.
             self.__cdp_obj__.send(response["result"])
@@ -332,7 +337,7 @@ class Connection(metaclass=CantTouchThis):
         async with self._connection_lock:
             if not self.websocket or bool(self.websocket.close_code):
                 try:
-                    self._websocket = await websockets.connect(
+                    self._websocket = await websockets.asyncio.client.connect(
                         self.websocket_url,
                         ping_timeout=PING_TIMEOUT,
                         max_size=MAX_SIZE,
@@ -473,7 +478,11 @@ class Connection(metaclass=CantTouchThis):
                 seen_one = True
                 if "id" in message:
                     async with self._lock:
-                        tx: Transaction = self.mapper.pop(message["id"])
+                        try:
+                            tx: Transaction = self.mapper.pop(message["id"])
+                        except KeyError:
+                            logger.warning("Received message with unknown id: %s", message.get("id"))
+                            continue
                     tx(**message)
                     logger.debug("got answer for (message_id:%d) => %s", tx.id, message)
                 else:
