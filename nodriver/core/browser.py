@@ -682,7 +682,7 @@ class Browser:
                 else:
                     del self._i
 
-    def stop(self):
+    def stop(self):  # TODO: this should probably be converted to async
         # Close websocket connection
         try:
             loop = asyncio.get_running_loop()

@@ -478,8 +478,9 @@ class Connection(metaclass=CantTouchThis):
         seen_one = False
         while True:
             try:
-                async with self._lock:
-                    raw = await asyncio.wait_for(self.websocket.recv(), 0.05)
+                # No timeout needed - recv() is cancellable and returns immediately on messages/close.
+                # No lock needed - only one _listener task exists, and it's the sole caller of recv().
+                raw = await self.websocket.recv()
             except ProtocolException:
                 break
             except websockets.exceptions.ConnectionClosedOK:
@@ -488,9 +489,6 @@ class Connection(metaclass=CantTouchThis):
             except websockets.exceptions.ConnectionClosed:
                 await self.disconnect()
                 break
-            except asyncio.TimeoutError as e:
-                await asyncio.sleep(0.05)
-                continue
             except (Exception,) as e:
                 logger.info(
                     "error when receiving websocket response: %s" % e, exc_info=True

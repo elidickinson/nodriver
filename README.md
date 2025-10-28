@@ -16,6 +16,7 @@ NODRIVER
 > - Fixed `tab.sleep()`, `tab.wait()`, and event handler removal bugs
 > - Improved resource cleanup for browser shutdown, task cancellation, and temp directories
 > - Port reuse optimization and more resilient browser startup
+> - Performance: major improvement in websocket listener by removing exception-based flow control (eliminates ~20 exceptions/sec per connection)
 
 ### nodriver provides next level async webscraping and browser automation library for python with an easy interface which Just Makes Sense ™
 
@@ -37,11 +38,11 @@ with most method parameters having `best practice` defaults.
 Using 1 or 2 lines, this is up and running, providing best practice config
 by default. It cleans up created files (profile) afterwards.
 
-known to work with 
+known to work with
 - chromium
 - chrome
 - edge
-- brave 
+- brave
 
 
 While usability and convenience is important. It’s also easy
@@ -65,7 +66,7 @@ to fully customizable everything using the entire array of
   this could also be used as wait condition for a element to appear, since it will retry
   for the duration of <timeout> until found. so an ```await tab.select('body')``` could be used
   as an indicator whether a page is loaded.
-  the find method searches by text, but will not naively return the first 
+  the find method searches by text, but will not naively return the first
   matching element, but will match candidates by closest matching text length (shortest wins),
   this makes lookups like tab.find('accept all') return the actual cookie button instead of
   a script in the headers
@@ -112,8 +113,8 @@ callback may accept a single argument (event), or 2 arguments (event, tab).
 
 
 ### ```start(expert=True)```
-does some hacking for more experienced users. It disables 
-web security and origin-trials, as well as ensures 
+does some hacking for more experienced users. It disables
+web security and origin-trials, as well as ensures
 shadow-roots are always open. This makes you more detectable though!
 
 
@@ -125,7 +126,7 @@ Installation
  on the machine where you use this package.**
 
 when running on a headless machine, like AWS or any other environment where
-no display is present, it's best to use some **Xvfb** tool, to emulate a **screen**. 
+no display is present, it's best to use some **Xvfb** tool, to emulate a **screen**.
 alternatively this package can be used in headless mode.
 
 
@@ -153,7 +154,7 @@ The aim of this project (just like undetected-chromedriver, somewhere long ago)
 is to keep it short and simple, so you can quickly open an editor or interactive session,
 type or paste a few lines and off you go.
 
-simple 
+simple
 --------------
 
 ```python
@@ -194,7 +195,7 @@ Custom options using the Config object
 
 I’ll leave out the async boilerplate here
 
-```python 
+```python
 from nodriver import *
 
 config = Config()
@@ -208,7 +209,7 @@ config.lang="en-US"   # this could set iso-language-code in navigator, not recom
 
 some impression
 ----
-```python 
+```python
 import nodriver
 
 async def main():
