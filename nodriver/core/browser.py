@@ -13,7 +13,7 @@ import logging
 import os
 import pathlib
 import pickle
-import subprocess
+import time
 import urllib.parse
 import urllib.request
 import warnings
@@ -706,21 +706,36 @@ class Browser:
 
         pid = self._process_pid
 
+        def process_exists(pid):
+            try:
+                os.kill(pid, 0)
+                return True
+            except ProcessLookupError:
+                return False
+
         try:
             # Try graceful shutdown first
             self._process.terminate()
-            self._process.wait(timeout=5)
-            logger.info("terminated browser with pid %d successfully" % pid)
-        except subprocess.TimeoutExpired:
-            # Graceful shutdown timed out, force kill
-            try:
-                self._process.kill()
-                self._process.wait(timeout=3)
-                logger.info("killed browser with pid %d successfully" % pid)
-            except subprocess.TimeoutExpired:
-                logger.warning("browser process %d did not exit after kill signal" % pid)
-            except (ProcessLookupError, PermissionError, OSError) as e:
-                logger.debug("expected error during kill: %s", e)
+            # Poll for termination (asyncio.subprocess.Process.wait doesn't support timeout)
+            # Use os.kill(pid, 0) since asyncio.subprocess returncode not updated in sync context
+            for _ in range(50):  # 5 seconds total (50 * 0.1s)
+                if not process_exists(pid):
+                    logger.info("terminated browser with pid %d successfully" % pid)
+                    break
+                time.sleep(0.1)
+            else:
+                # Graceful shutdown timed out, force kill
+                try:
+                    self._process.kill()
+                    for _ in range(30):  # 3 seconds total (30 * 0.1s)
+                        if not process_exists(pid):
+                            logger.info("killed browser with pid %d successfully" % pid)
+                            break
+                        time.sleep(0.1)
+                    else:
+                        logger.warning("browser process %d did not exit after kill signal" % pid)
+                except (ProcessLookupError, PermissionError, OSError) as e:
+                    logger.debug("expected error during kill: %s", e)
         except PermissionError:
             logger.info("no permission to terminate browser process %d" % pid)
         except (ProcessLookupError, OSError) as e:
