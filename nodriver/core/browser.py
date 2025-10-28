@@ -125,13 +125,6 @@ class Browser:
         self.connection: Connection = None
         logger.debug("Session object initialized: %s" % vars(self))
 
-    def _handle_background_task_result(self, task: asyncio.Task):
-        """Handle exceptions from background tasks."""
-        try:
-            task.result()
-        except Exception as e:
-            logger.error("background task failed: %s", e, exc_info=True)
-
     @property
     def websocket_url(self):
         return self.info.webSocketDebuggerUrl
@@ -683,20 +676,22 @@ class Browser:
                     del self._i
 
     def stop(self):  # TODO: this should probably be converted to async
-        # Close websocket connection
-        try:
-            loop = asyncio.get_running_loop()
-            if self.connection:
-                task = loop.create_task(self.connection.disconnect())
-                task.add_done_callback(self._handle_background_task_result)
-                logger.debug("closed the connection using get_running_loop().create_task()")
-        except RuntimeError:
-            if self.connection:
+        # Gracefully disconnect websocket before terminating the browser process.
+        # Only works when called from sync context (e.g., atexit) where we can block.
+        # From async contexts, RuntimeError is raised - we skip since process termination closes connection anyway.
+        if self.connection:
+            try:
+                # Check if we're in an async context before attempting disconnect
                 try:
+                    asyncio.get_running_loop()
+                    # Event loop is running - can't use asyncio.run()
+                    logger.debug("skipping disconnect (called from async context)")
+                except RuntimeError:
+                    # No event loop - safe to use asyncio.run()
                     asyncio.run(self.connection.disconnect())
-                    logger.debug("closed the connection using asyncio.run()")
-                except (ConnectionError, OSError) as e:
-                    logger.debug("expected error during disconnect: %s", e)
+                    logger.debug("disconnected successfully")
+            except (ConnectionError, OSError) as e:
+                logger.debug("expected error during disconnect: %s", e)
 
         # Terminate browser process
         if not self._process:
