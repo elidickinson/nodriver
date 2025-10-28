@@ -431,9 +431,9 @@ class Connection(metaclass=CantTouchThis):
                     logger.debug("", exc_info=True)
                     try:
                         self.enabled_domains.remove(domain_mod)
-                    except:  # noqa
-                        logger.debug("NOT GOOD", exc_info=True)
-                        continue
+                    except ValueError:
+                        # benign race condition; domain already removed by concurrent call
+                        pass
                 finally:
                     continue
         for ed in enabled_domains:

@@ -176,7 +176,7 @@ class Browser:
     sleep = wait
     """alias for wait"""
 
-    def _handle_target_update(
+    async def _handle_target_update(
         self,
         event: Union[
             cdp.target.TargetInfoChanged,
@@ -187,59 +187,70 @@ class Browser:
     ):
         """this is an internal handler which updates the targets when chrome emits the corresponding event"""
 
-        if isinstance(event, cdp.target.TargetInfoChanged):
-            target_info = event.target_info
+        async with self._update_targets_lock:
+            if isinstance(event, cdp.target.TargetInfoChanged):
+                target_info = event.target_info
 
-            current_tab = next(
-                filter(
-                    lambda item: item.target_id == target_info.target_id, self.targets
+                try:
+                    current_tab = next(
+                        filter(
+                            lambda item: item.target_id == target_info.target_id, self.targets
+                        )
+                    )
+                except StopIteration:
+                    logger.debug("target %s not found for update", target_info.target_id)
+                    return
+
+                current_target = current_tab.target
+
+                if logger.getEffectiveLevel() <= 10:
+                    changes = util.compare_target_info(current_target, target_info)
+                    changes_string = ""
+                    for change in changes:
+                        key, old, new = change
+                        changes_string += f"\n{key}: {old} => {new}\n"
+                    logger.debug(
+                        "target #%d has changed: %s"
+                        % (self.targets.index(current_tab), changes_string)
+                    )
+
+                current_tab._target = target_info
+
+            elif isinstance(event, cdp.target.TargetCreated):
+                target_info: cdp.target.TargetInfo = event.target_info
+                from .tab import Tab
+
+                # Check if target already exists
+                if any(t.target_id == target_info.target_id for t in self.targets):
+                    logger.debug("target %s already exists, skipping create", target_info.target_id)
+                    return
+
+                new_target = Tab(
+                    (
+                        f"ws://{self.config.host}:{self.config.port}"
+                        f"/devtools/{target_info.type_ or 'page'}"  # all types are 'page' internally in chrome apparently
+                        f"/{target_info.target_id}"
+                    ),
+                    target=target_info,
+                    browser=self,
                 )
-            )
-            current_target = current_tab.target
 
-            if logger.getEffectiveLevel() <= 10:
-                changes = util.compare_target_info(current_target, target_info)
-                changes_string = ""
-                for change in changes:
-                    key, old, new = change
-                    changes_string += f"\n{key}: {old} => {new}\n"
-                logger.debug(
-                    "target #%d has changed: %s"
-                    % (self.targets.index(current_tab), changes_string)
-                )
+                self.targets.append(new_target)
 
-            current_tab._target = target_info
+                logger.debug("target #%d created => %s", len(self.targets), new_target)
 
-        elif isinstance(event, cdp.target.TargetCreated):
-            target_info: cdp.target.TargetInfo = event.target_info
-            from .tab import Tab
-
-            new_target = Tab(
-                (
-                    f"ws://{self.config.host}:{self.config.port}"
-                    f"/devtools/{target_info.type_ or 'page'}"  # all types are 'page' internally in chrome apparently
-                    f"/{target_info.target_id}"
-                ),
-                target=target_info,
-                browser=self,
-            )
-
-            self.targets.append(new_target)
-
-            logger.debug("target #%d created => %s", len(self.targets), new_target)
-
-        elif isinstance(event, cdp.target.TargetDestroyed):
-            current_tab = next(
-                filter(lambda item: item.target_id == event.target_id, self.targets)
-            )
-            logger.debug(
-                "target removed. id # %d => %s"
-                % (self.targets.index(current_tab), current_tab)
-            )
-            self.targets.remove(current_tab)
-
-        task = asyncio.create_task(self.update_targets())
-        task.add_done_callback(self._handle_background_task_result)
+            elif isinstance(event, cdp.target.TargetDestroyed):
+                try:
+                    current_tab = next(
+                        filter(lambda item: item.target_id == event.target_id, self.targets)
+                    )
+                    logger.debug(
+                        "target removed. id # %d => %s"
+                        % (self.targets.index(current_tab), current_tab)
+                    )
+                    self.targets.remove(current_tab)
+                except StopIteration:
+                    logger.debug("target %s already removed", event.target_id)
 
     async def get(
         self, url="chrome://welcome", new_tab: bool = False, new_window: bool = False
