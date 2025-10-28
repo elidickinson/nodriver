@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../../../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html">
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>nodriver.core.tab - nodriver documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/./custom.css?v=3934642d" />
     
     
@@ -74,7 +74,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -89,34 +89,73 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -124,8 +163,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -133,16 +171,15 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -150,7 +187,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../../../index.html">
-  
   
   <span class="sidebar-brand-text">nodriver  documentation</span>
   
@@ -176,7 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../nodriver/classes/others_and_helpers.html">Other classes and Helper classes</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of CDP object</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input aria-label="Toggle navigation of CDP object" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/accessibility.html">Accessibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/animation.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/audits.html">Audits</a></li>
@@ -251,19 +287,18 @@
         </a>
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <h1>Source code for nodriver.core.tab</h1><div class="highlight"><pre>
 <span></span><span class="c1"># Copyright 2024 by UltrafunkAmsterdam (https://github.com/UltrafunkAmsterdam)</span>
 <span class="c1"># All rights reserved.</span>
@@ -271,32 +306,32 @@
 <span class="c1"># and is released under the &quot;GNU AFFERO GENERAL PUBLIC LICENSE&quot;.</span>
 <span class="c1"># Please see the LICENSE.txt file that should have been included as part of this package.</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">functools</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">secrets</span>
-<span class="kn">import</span> <span class="nn">typing</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">secrets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">nodriver.core.browser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nodriver.core.browser</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">cdp</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">element</span><span class="p">,</span> <span class="n">util</span>
-<span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">PathLike</span>
-<span class="kn">from</span> <span class="nn">.connection</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">ProtocolException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">element</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathLike</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.connection</span><span class="w"> </span><span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">ProtocolException</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Tab">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab">[docs]</a>
-<span class="k">class</span> <span class="nc">Tab</span><span class="p">(</span><span class="n">Connection</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Tab</span><span class="p">(</span><span class="n">Connection</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    :ref:`tab` is the controlling mechanism/connection to a &#39;target&#39;,</span>
 <span class="sd">    for most of us &#39;target&#39; can be read as &#39;tab&#39;. however it could also</span>
@@ -429,7 +464,7 @@
     <span class="n">browser</span><span class="p">:</span> <span class="n">nodriver</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">Browser</span>
     <span class="n">_download_behavior</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">websocket_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">target</span><span class="p">:</span> <span class="n">cdp</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">TargetInfo</span><span class="p">,</span>
@@ -441,7 +476,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_window_id</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">inspector_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inspector_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get the inspector url. this url can be used in another browser to show you the devtools interface for</span>
 <span class="sd">        current tab. useful for debugging (and headless)</span>
@@ -450,35 +485,44 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">port</span><span class="si">}</span><span class="s2">/devtools/inspector.html?ws=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">websocket_url</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span><span class="si">}</span><span class="s2">&quot;</span>
 
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        get the current url of the tab</span>
+<span class="sd">        :return: current page url</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">url</span>
+
 <div class="viewcode-block" id="Tab.inspector_open">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.inspector_open">[docs]</a>
-    <span class="k">def</span> <span class="nf">inspector_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">import</span> <span class="nn">webbrowser</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">inspector_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
 
         <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inspector_url</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tab.open_external_inspector">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.open_external_inspector">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">open_external_inspector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">open_external_inspector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        opens the system&#39;s browser containing the devtools inspector page</span>
 <span class="sd">        for this tab. could be handy, especially to debug in headless mode.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">import</span> <span class="nn">webbrowser</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
 
         <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inspector_url</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tab.feed_cdp">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.feed_cdp">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">feed_cdp</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">feed_cdp</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">:</span> <span class="n">Generator</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Any</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Future</span><span class="p">:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_send_oneshot</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span></div>
 
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_prepare_headless</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_headless</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_prep_headless_done&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
             <span class="k">return</span>
@@ -499,7 +543,7 @@
             <span class="p">)</span>
         <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_prep_headless_done&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_prepare_expert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_expert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_prep_expert_done&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
             <span class="k">return</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="p">:</span>
@@ -520,7 +564,7 @@
 
 <div class="viewcode-block" id="Tab.find">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.find">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">find</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">best_match</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -580,7 +624,7 @@
 
 <div class="viewcode-block" id="Tab.select">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.select">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">select</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">selector</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">timeout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
@@ -613,7 +657,7 @@
 
 <div class="viewcode-block" id="Tab.find_all">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.find_all">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">find_all</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find_all</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">timeout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
@@ -645,7 +689,7 @@
 
 <div class="viewcode-block" id="Tab.select_all">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.select_all">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">select_all</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">select_all</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">selector</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">include_frames</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">nodriver</span><span class="o">.</span><span class="n">Element</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -682,20 +726,20 @@
 
 <div class="viewcode-block" id="Tab.sleep">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.sleep">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
                 <span class="p">[</span>
                     <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">update_targets</span><span class="p">()),</span>
                     <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span>
                 <span class="p">],</span>
-                <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span><span class="p">,</span>
+                <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ALL_COMPLETED</span><span class="p">,</span>
             <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tab.xpath">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.xpath">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">xpath</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">xpath</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.5</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">nodriver</span><span class="o">.</span><span class="n">Element</span><span class="p">]]:</span>  <span class="c1"># noqa</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -746,7 +790,7 @@
 
 <div class="viewcode-block" id="Tab.get">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;chrome://welcome&quot;</span><span class="p">,</span> <span class="n">new_tab</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">new_window</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;top level get. utilizes the first tab to retrieve given url.</span>
@@ -777,7 +821,7 @@
 
 <div class="viewcode-block" id="Tab.query_selector_all">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.query_selector_all">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">query_selector_all</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">query_selector_all</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">selector</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">_node</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">cdp</span><span class="o">.</span><span class="n">dom</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span> <span class="s2">&quot;element.Element&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -847,7 +891,7 @@
 
 <div class="viewcode-block" id="Tab.query_selector">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.query_selector">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">query_selector</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">query_selector</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">selector</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">_node</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">cdp</span><span class="o">.</span><span class="n">dom</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span> <span class="n">element</span><span class="o">.</span><span class="n">Element</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -899,7 +943,7 @@
 
 <div class="viewcode-block" id="Tab.find_elements_by_text">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.find_elements_by_text">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">find_elements_by_text</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find_elements_by_text</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">tag_hint</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -988,7 +1032,7 @@
 
 <div class="viewcode-block" id="Tab.find_element_by_text">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.find_element_by_text">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">find_element_by_text</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find_element_by_text</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">best_match</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -1088,7 +1132,7 @@
 
 <div class="viewcode-block" id="Tab.back">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.back">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">back</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">back</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        history back</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1097,7 +1141,7 @@
 
 <div class="viewcode-block" id="Tab.forward">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.forward">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        history forward</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1106,7 +1150,7 @@
 
 <div class="viewcode-block" id="Tab.reload">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.reload">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">reload</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">reload</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">ignore_cache</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">script_to_evaluate_on_load</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1131,7 +1175,7 @@
 
 <div class="viewcode-block" id="Tab.evaluate">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.evaluate">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">await_promise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_by_value</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
@@ -1172,7 +1216,7 @@
 
 <div class="viewcode-block" id="Tab.js_dumps">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.js_dumps">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">js_dumps</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">js_dumps</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">obj_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">return_by_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
         <span class="n">typing</span><span class="o">.</span><span class="n">Dict</span><span class="p">,</span>
@@ -1237,32 +1281,32 @@
 <span class="sd">                                                               tmp[k] = null;</span>
 <span class="sd">                                                               continue</span>
 <span class="sd">                                                           }</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                           if (_typesB.includes(typeof obj[k])) {</span>
 <span class="sd">                                                               tmp[k] = obj[k]</span>
 <span class="sd">                                                               continue</span>
 <span class="sd">                                                           }</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                           try {</span>
 <span class="sd">                                                               if (typeof obj[k] === &#39;function&#39;) {</span>
 <span class="sd">                                                                   tmp[k] = obj[k].toString()</span>
 <span class="sd">                                                                   continue</span>
 <span class="sd">                                                               }</span>
-<span class="sd">                        </span>
-<span class="sd">                        </span>
+
+
 <span class="sd">                                                               if (typeof obj[k] === &#39;object&#39;) {</span>
 <span class="sd">                                                                   tmp[k] = ___dump(obj[k], _d + 1);</span>
 <span class="sd">                                                                   continue</span>
 <span class="sd">                                                               }</span>
-<span class="sd">                        </span>
-<span class="sd">                        </span>
+
+
 <span class="sd">                                                           } catch (e) {}</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                           try {</span>
 <span class="sd">                                                               tmp[k] = JSON.stringify(obj[k])</span>
 <span class="sd">                                                               continue</span>
 <span class="sd">                                                           } catch (e) {</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                           }</span>
 <span class="sd">                                                           try {</span>
 <span class="sd">                                                               tmp[k] = obj[k].toString();</span>
@@ -1271,7 +1315,7 @@
 <span class="sd">                                                       }</span>
 <span class="sd">                                                       return tmp</span>
 <span class="sd">                                                   }</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                   function ___dumpY(obj) {</span>
 <span class="sd">                                                       var objKeys = (obj) =&gt; {</span>
 <span class="sd">                                                           var [target, result] = [obj, []];</span>
@@ -1283,7 +1327,7 @@
 <span class="sd">                                                       }</span>
 <span class="sd">                                                       return Object.fromEntries(</span>
 <span class="sd">                                                           objKeys(obj).map(_ =&gt; [_, ___dump(obj[_])]))</span>
-<span class="sd">                        </span>
+
 <span class="sd">                                                   }</span>
 <span class="sd">                                                   ___dumpY( %s )</span>
 <span class="sd">                                           &quot;&quot;&quot;</span>
@@ -1352,7 +1396,7 @@
 
 <div class="viewcode-block" id="Tab.close">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.close">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        close the current target (ie: tab,window,page)</span>
 <span class="sd">        :return:</span>
@@ -1364,7 +1408,7 @@
 
 <div class="viewcode-block" id="Tab.get_window">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_window">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_window</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">cdp</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">WindowID</span><span class="p">,</span> <span class="n">cdp</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">Bounds</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_window</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">cdp</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">WindowID</span><span class="p">,</span> <span class="n">cdp</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">Bounds</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get the window Bounds</span>
 <span class="sd">        :return:</span>
@@ -1378,7 +1422,7 @@
 
 <div class="viewcode-block" id="Tab.get_content">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_content">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        gets the current page source content (html)</span>
 <span class="sd">        :return:</span>
@@ -1392,7 +1436,7 @@
 
 <div class="viewcode-block" id="Tab.maximize">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.maximize">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">maximize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">maximize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        maximize page/tab/window</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1401,7 +1445,7 @@
 
 <div class="viewcode-block" id="Tab.minimize">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.minimize">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">minimize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">minimize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        minimize page/tab/window</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1410,7 +1454,7 @@
 
 <div class="viewcode-block" id="Tab.fullscreen">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.fullscreen">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">fullscreen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">fullscreen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        minimize page/tab/window</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1419,13 +1463,13 @@
 
 <div class="viewcode-block" id="Tab.medimize">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.medimize">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">medimize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">medimize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_window_state</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tab.set_window_size">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.set_window_size">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_window_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_window_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        set window size and position</span>
 
@@ -1445,7 +1489,7 @@
 
 <div class="viewcode-block" id="Tab.activate">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.activate">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        active this target (ie: tab,window,page)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1454,7 +1498,7 @@
 
 <div class="viewcode-block" id="Tab.bring_to_front">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.bring_to_front">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">bring_to_front</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">bring_to_front</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        alias to self.activate</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1463,7 +1507,7 @@
 
 <div class="viewcode-block" id="Tab.set_window_state">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.set_window_state">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_window_state</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1528,7 +1572,7 @@
 
 <div class="viewcode-block" id="Tab.scroll_down">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.scroll_down">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">scroll_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">scroll_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        scrolls down maybe</span>
 
@@ -1557,7 +1601,7 @@
 
 <div class="viewcode-block" id="Tab.scroll_up">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.scroll_up">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">scroll_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">scroll_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        scrolls up maybe</span>
 
@@ -1586,12 +1630,9 @@
 
 <div class="viewcode-block" id="Tab.wait">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.wait">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">):</span>
 
         <span class="c1"># await self.browser.wait()</span>
-
-        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
         <span class="n">event</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
         <span class="n">wait_events</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">cdp</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">FrameStoppedLoading</span><span class="p">,</span>
@@ -1605,34 +1646,26 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">wait_events</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">t</span><span class="p">:</span>
-                <span class="n">t</span> <span class="o">=</span> <span class="mf">0.5</span>
-                <span class="n">done</span><span class="p">,</span> <span class="n">pending</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
-                    <span class="p">[</span>
-                        <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()),</span>
-                        <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span>
-                    <span class="p">],</span>
-                    <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span><span class="p">,</span>
-                <span class="p">)</span>
+            <span class="c1"># wait for a wait_events event to fire for up to t seconds</span>
+            <span class="n">done</span><span class="p">,</span> <span class="n">pending</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()),</span>
+                    <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span>
+                <span class="p">],</span>
+                <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span><span class="p">,</span>
+            <span class="p">)</span>
 
-                <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">]</span>
-
+            <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">]</span>
         <span class="k">finally</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_handler</span><span class="p">(</span><span class="n">wait_events</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span></div>
 
-        <span class="c1">#         await asyncio.wait_for()</span>
-        <span class="c1">#     except asyncio.TimeoutError:</span>
-        <span class="c1">#         if isinstance(t, (int, float)):</span>
-        <span class="c1">#             # explicit time is given, which is now passed</span>
-        <span class="c1">#             # so bail out early</span>
-        <span class="c1">#             return</span>
 
-    <span class="k">def</span> <span class="fm">__await__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__await__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span><span class="o">.</span><span class="fm">__await__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Tab.wait_for">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.wait_for">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">wait_for</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">wait_for</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">selector</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -1683,7 +1716,7 @@
 
 <div class="viewcode-block" id="Tab.download_file">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.download_file">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        downloads file by given url.</span>
 
@@ -1746,7 +1779,7 @@
 
 <div class="viewcode-block" id="Tab.save_screenshot">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.save_screenshot">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">save_screenshot</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">save_screenshot</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">filename</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
         <span class="nb">format</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;jpeg&quot;</span><span class="p">,</span>
@@ -1766,8 +1799,8 @@
 <span class="sd">        :rtype: str</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># noqa</span>
-        <span class="kn">import</span> <span class="nn">datetime</span>
-        <span class="kn">import</span> <span class="nn">urllib.parse</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
 
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>  <span class="c1"># update the target&#39;s url</span>
         <span class="n">path</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1800,7 +1833,7 @@
             <span class="k">raise</span> <span class="n">ProtocolException</span><span class="p">(</span>
                 <span class="s2">&quot;could not take screenshot. most possible cause is the page has not finished loading yet.&quot;</span>
             <span class="p">)</span>
-        <span class="kn">import</span> <span class="nn">base64</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
         <span class="n">data_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
@@ -1811,7 +1844,7 @@
 
 <div class="viewcode-block" id="Tab.set_download_path">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.set_download_path">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_download_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">PathLike</span><span class="p">]):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_download_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">PathLike</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        sets the download path and allows downloads</span>
 <span class="sd">        this is required for any download function to work (well not entirely, since when unset we set a default folder)</span>
@@ -1833,7 +1866,7 @@
 
 <div class="viewcode-block" id="Tab.get_all_linked_sources">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_all_linked_sources">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_all_linked_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;nodriver.Element&quot;</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_all_linked_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;nodriver.Element&quot;</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get all elements of tag: link, a, img, scripts meta, video, audio</span>
 
@@ -1845,7 +1878,7 @@
 
 <div class="viewcode-block" id="Tab.get_all_urls">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_all_urls">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_all_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_all_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        convenience function, which returns all links (a,link,img,script,meta)</span>
 
@@ -1853,7 +1886,7 @@
 <span class="sd">        :return: list of urls</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="kn">import</span> <span class="nn">urllib.parse</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
 
         <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">all_assets</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_selector_all</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;a,link,img,script,meta&quot;</span><span class="p">)</span>
@@ -1878,7 +1911,7 @@
 
 <div class="viewcode-block" id="Tab.get_local_storage">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_local_storage">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_local_storage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_local_storage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get local storage items as dict of strings (careful!, proper deserialization needs to be done if needed)</span>
 
@@ -1904,7 +1937,7 @@
 
 <div class="viewcode-block" id="Tab.set_local_storage">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.set_local_storage">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_local_storage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_local_storage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        set local storage.</span>
 <span class="sd">        dict items must be strings. simple types will be converted to strings automatically.</span>
@@ -1935,7 +1968,7 @@
         <span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">selector</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -1954,7 +1987,7 @@
 
 <div class="viewcode-block" id="Tab.get_frame_tree">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_frame_tree">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_frame_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cdp</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">FrameTree</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_frame_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cdp</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">FrameTree</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        retrieves the frame tree for current tab</span>
 <span class="sd">        There seems no real difference between :ref:`Tab.get_frame_resource_tree()`</span>
@@ -1967,7 +2000,7 @@
 
 <div class="viewcode-block" id="Tab.get_frame_resource_tree">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_frame_resource_tree">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_frame_resource_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cdp</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">FrameResourceTree</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_frame_resource_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cdp</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">FrameResourceTree</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        retrieves the frame resource tree for current tab.</span>
 <span class="sd">        There seems no real difference between :ref:`Tab.get_frame_tree()`</span>
@@ -1983,7 +2016,7 @@
 
 <div class="viewcode-block" id="Tab.get_frame_resource_urls">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.get_frame_resource_urls">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_frame_resource_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_frame_resource_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        gets the urls of resources</span>
 <span class="sd">        :return:</span>
@@ -2003,7 +2036,7 @@
 
 <div class="viewcode-block" id="Tab.search_frame_resources">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.search_frame_resources">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">search_frame_resources</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">search_frame_resources</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">cdp</span><span class="o">.</span><span class="n">debugger</span><span class="o">.</span><span class="n">SearchMatch</span><span class="p">]]:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -2032,7 +2065,7 @@
 
 <div class="viewcode-block" id="Tab.verify_cf">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.verify_cf">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">verify_cf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_image</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">flash</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">verify_cf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_image</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">flash</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        convenience function to verify cf checkbox</span>
 
@@ -2076,7 +2109,7 @@
 
 <div class="viewcode-block" id="Tab.template_location">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.template_location">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">template_location</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">template_location</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">template_image</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2106,7 +2139,7 @@
 <span class="sd">        :rtype:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">cv2</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
 <span class="w">                </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2115,7 +2148,7 @@
 <span class="sd">                template_location function needs the computer vision library &quot;opencv-python&quot; installed</span>
 <span class="sd">                to install:</span>
 <span class="sd">                pip install opencv-python</span>
-<span class="sd">            </span>
+
 <span class="sd">            &quot;&quot;&quot;</span>
             <span class="p">)</span>
             <span class="k">return</span>
@@ -2168,7 +2201,7 @@
 
 <div class="viewcode-block" id="Tab.bypass_insecure_connection_warning">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.bypass_insecure_connection_warning">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">bypass_insecure_connection_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">bypass_insecure_connection_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        when you enter a site where the certificate is invalid</span>
 <span class="sd">        you get a warning. call this function to &quot;proceed&quot;</span>
@@ -2181,7 +2214,7 @@
 
 <div class="viewcode-block" id="Tab.mouse_move">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.mouse_move">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">mouse_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">flash</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">mouse_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">flash</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">steps</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">steps</span> <span class="ow">or</span> <span class="n">steps</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">steps</span>
         <span class="c1"># probably the worst waay of calculating this. but couldn&#39;t think of a better solution today.</span>
         <span class="k">if</span> <span class="n">steps</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -2209,7 +2242,7 @@
 
 <div class="viewcode-block" id="Tab.scroll_bottom_reached">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.scroll_bottom_reached">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">scroll_bottom_reached</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">scroll_bottom_reached</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        returns True if scroll is at the bottom of the page</span>
 <span class="sd">        handy when you need to scroll over paginated pages of different lengths</span>
@@ -2226,13 +2259,14 @@
 
 <div class="viewcode-block" id="Tab.mouse_click">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.mouse_click">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">mouse_click</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">mouse_click</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">button</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
         <span class="n">buttons</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
         <span class="n">modifiers</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">click_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
         <span class="n">_until_event</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;native click on position x,y</span>
@@ -2244,6 +2278,7 @@
 <span class="sd">        :param buttons: which button (default 1 = left)</span>
 <span class="sd">        :param modifiers: *(Optional)* Bit field representing pressed modifier keys.</span>
 <span class="sd">                Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).</span>
+<span class="sd">        :param click_count: how many times to click (single click, double click, triple click)</span>
 <span class="sd">        :param _until_event: internal. event to wait for before returning</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2256,7 +2291,7 @@
                 <span class="n">modifiers</span><span class="o">=</span><span class="n">modifiers</span><span class="p">,</span>
                 <span class="n">button</span><span class="o">=</span><span class="n">cdp</span><span class="o">.</span><span class="n">input_</span><span class="o">.</span><span class="n">MouseButton</span><span class="p">(</span><span class="n">button</span><span class="p">),</span>
                 <span class="n">buttons</span><span class="o">=</span><span class="n">buttons</span><span class="p">,</span>
-                <span class="n">click_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">click_count</span><span class="o">=</span><span class="n">click_count</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">)</span>
 
@@ -2268,14 +2303,14 @@
                 <span class="n">modifiers</span><span class="o">=</span><span class="n">modifiers</span><span class="p">,</span>
                 <span class="n">button</span><span class="o">=</span><span class="n">cdp</span><span class="o">.</span><span class="n">input_</span><span class="o">.</span><span class="n">MouseButton</span><span class="p">(</span><span class="n">button</span><span class="p">),</span>
                 <span class="n">buttons</span><span class="o">=</span><span class="n">buttons</span><span class="p">,</span>
-                <span class="n">click_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">click_count</span><span class="o">=</span><span class="n">click_count</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tab.mouse_drag">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.mouse_drag">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">mouse_drag</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">mouse_drag</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">source_point</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span>
         <span class="n">dest_point</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span>
@@ -2352,14 +2387,15 @@
 
 <div class="viewcode-block" id="Tab.flash_point">
 <a class="viewcode-back" href="../../../nodriver/classes/tab.html#nodriver.Tab.flash_point">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">flash_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">flash_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="n">style</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s2">&quot;position:absolute;z-index:99999999;padding:0;margin:0;&quot;</span>
+            <span class="s2">&quot;position:absolute;z-index:2147483647;padding:0;margin:0;&quot;</span>
             <span class="s2">&quot;left:</span><span class="si">{:.1f}</span><span class="s2">px; top: </span><span class="si">{:.1f}</span><span class="s2">px;&quot;</span>
-            <span class="s2">&quot;opacity:1;&quot;</span>
+            <span class="s2">&quot;translate:-50</span><span class="si">% -50%</span><span class="s2">;&quot;</span>
+            <span class="s2">&quot;opacity:0;&quot;</span>
             <span class="s2">&quot;width:</span><span class="si">{:d}</span><span class="s2">px;height:</span><span class="si">{:d}</span><span class="s2">px;border-radius:50%;background:red;&quot;</span>
             <span class="s2">&quot;animation:show-pointer-ani </span><span class="si">{:.2f}</span><span class="s2">s ease 1;&quot;</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
         <span class="n">script</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">                var css = document.styleSheets[0];</span>
@@ -2380,9 +2416,9 @@
 <span class="sd">                _d.style = `{0:s}`;</span>
 <span class="sd">                _d.id = `{1:s}`;</span>
 <span class="sd">                document.body.insertAdjacentElement(&#39;afterBegin&#39;, _d);</span>
-<span class="sd">    </span>
+
 <span class="sd">                setTimeout( () =&gt; document.getElementById(&#39;{1:s}&#39;).remove(), {2:d});</span>
-<span class="sd">    </span>
+
 <span class="sd">            &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">style</span><span class="p">,</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
             <span class="p">)</span>
@@ -2398,13 +2434,13 @@
         <span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Tab</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Tab</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
@@ -2412,7 +2448,7 @@
                 <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">&quot; has no attribute &quot;%s&quot;&#39;</span> <span class="o">%</span> <span class="n">item</span>
             <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
             <span class="n">extra</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[url: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">]&quot;</span>
@@ -2575,8 +2611,8 @@
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

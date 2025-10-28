@@ -1,15 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Other classes and Helper classes" href="others_and_helpers.html" /><link rel="prev" title="Tab class" href="tab.html" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Other classes and Helper classes" href="others_and_helpers.html"><link rel="prev" title="Tab class" href="tab.html">
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>Element class - nodriver documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=3934642d" />
     
     
@@ -75,7 +75,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -90,34 +90,73 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -125,8 +164,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -134,16 +172,15 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -151,7 +188,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../../index.html">
-  
   
   <span class="sidebar-brand-text">nodriver  documentation</span>
   
@@ -177,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="others_and_helpers.html">Other classes and Helper classes</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cdp.html">CDP object</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of CDP object</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cdp.html">CDP object</a><input aria-label="Toggle navigation of CDP object" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cdp/accessibility.html">Accessibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cdp/animation.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cdp/audits.html">Audits</a></li>
@@ -251,195 +287,199 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/nodriver/classes/element.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="element-class">
-<span id="element"></span><h1>Element class<a class="headerlink" href="#element-class" title="Link to this heading">#</a></h1>
+<span id="element"></span><h1>Element class<a class="headerlink" href="#element-class" title="Link to this heading">¶</a></h1>
 <p>Some words about the Element class</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nodriver.Element">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element" title="Link to this definition">¶</a></dt>
 <dd><dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.tag">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#nodriver.Element.tag" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#nodriver.Element.tag" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.tag_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tag_name</span></span><a class="headerlink" href="#nodriver.Element.tag_name" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tag_name</span></span><a class="headerlink" href="#nodriver.Element.tag_name" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.node_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_id</span></span><a class="headerlink" href="#nodriver.Element.node_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_id</span></span><a class="headerlink" href="#nodriver.Element.node_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.backend_node_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backend_node_id</span></span><a class="headerlink" href="#nodriver.Element.backend_node_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backend_node_id</span></span><a class="headerlink" href="#nodriver.Element.backend_node_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.node_type">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_type</span></span><a class="headerlink" href="#nodriver.Element.node_type" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_type</span></span><a class="headerlink" href="#nodriver.Element.node_type" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.node_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_name</span></span><a class="headerlink" href="#nodriver.Element.node_name" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_name</span></span><a class="headerlink" href="#nodriver.Element.node_name" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.local_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_name</span></span><a class="headerlink" href="#nodriver.Element.local_name" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_name</span></span><a class="headerlink" href="#nodriver.Element.local_name" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.node_value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_value</span></span><a class="headerlink" href="#nodriver.Element.node_value" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_value</span></span><a class="headerlink" href="#nodriver.Element.node_value" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.parent_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent_id</span></span><a class="headerlink" href="#nodriver.Element.parent_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent_id</span></span><a class="headerlink" href="#nodriver.Element.parent_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.child_node_count">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">child_node_count</span></span><a class="headerlink" href="#nodriver.Element.child_node_count" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">child_node_count</span></span><a class="headerlink" href="#nodriver.Element.child_node_count" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.attributes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><a class="headerlink" href="#nodriver.Element.attributes" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><a class="headerlink" href="#nodriver.Element.attributes" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.document_url">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">document_url</span></span><a class="headerlink" href="#nodriver.Element.document_url" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">document_url</span></span><a class="headerlink" href="#nodriver.Element.document_url" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.base_url">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_url</span></span><a class="headerlink" href="#nodriver.Element.base_url" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_url</span></span><a class="headerlink" href="#nodriver.Element.base_url" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.public_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">public_id</span></span><a class="headerlink" href="#nodriver.Element.public_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">public_id</span></span><a class="headerlink" href="#nodriver.Element.public_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.system_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system_id</span></span><a class="headerlink" href="#nodriver.Element.system_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system_id</span></span><a class="headerlink" href="#nodriver.Element.system_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.internal_subset">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">internal_subset</span></span><a class="headerlink" href="#nodriver.Element.internal_subset" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">internal_subset</span></span><a class="headerlink" href="#nodriver.Element.internal_subset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.xml_version">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xml_version</span></span><a class="headerlink" href="#nodriver.Element.xml_version" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xml_version</span></span><a class="headerlink" href="#nodriver.Element.xml_version" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nodriver.Element.value" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nodriver.Element.value" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.pseudo_type">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_type</span></span><a class="headerlink" href="#nodriver.Element.pseudo_type" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_type</span></span><a class="headerlink" href="#nodriver.Element.pseudo_type" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.pseudo_identifier">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_identifier</span></span><a class="headerlink" href="#nodriver.Element.pseudo_identifier" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_identifier</span></span><a class="headerlink" href="#nodriver.Element.pseudo_identifier" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.shadow_root_type">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_root_type</span></span><a class="headerlink" href="#nodriver.Element.shadow_root_type" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_root_type</span></span><a class="headerlink" href="#nodriver.Element.shadow_root_type" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.frame_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_id</span></span><a class="headerlink" href="#nodriver.Element.frame_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_id</span></span><a class="headerlink" href="#nodriver.Element.frame_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.content_document">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content_document</span></span><a class="headerlink" href="#nodriver.Element.content_document" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content_document</span></span><a class="headerlink" href="#nodriver.Element.content_document" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.shadow_roots">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_roots</span></span><a class="headerlink" href="#nodriver.Element.shadow_roots" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_roots</span></span><a class="headerlink" href="#nodriver.Element.shadow_roots" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.template_content">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template_content</span></span><a class="headerlink" href="#nodriver.Element.template_content" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template_content</span></span><a class="headerlink" href="#nodriver.Element.template_content" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.pseudo_elements">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_elements</span></span><a class="headerlink" href="#nodriver.Element.pseudo_elements" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pseudo_elements</span></span><a class="headerlink" href="#nodriver.Element.pseudo_elements" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.imported_document">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imported_document</span></span><a class="headerlink" href="#nodriver.Element.imported_document" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imported_document</span></span><a class="headerlink" href="#nodriver.Element.imported_document" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.distributed_nodes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">distributed_nodes</span></span><a class="headerlink" href="#nodriver.Element.distributed_nodes" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">distributed_nodes</span></span><a class="headerlink" href="#nodriver.Element.distributed_nodes" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.is_svg">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_svg</span></span><a class="headerlink" href="#nodriver.Element.is_svg" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_svg</span></span><a class="headerlink" href="#nodriver.Element.is_svg" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.compatibility_mode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compatibility_mode</span></span><a class="headerlink" href="#nodriver.Element.compatibility_mode" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compatibility_mode</span></span><a class="headerlink" href="#nodriver.Element.compatibility_mode" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.assigned_slot">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">assigned_slot</span></span><a class="headerlink" href="#nodriver.Element.assigned_slot" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">assigned_slot</span></span><a class="headerlink" href="#nodriver.Element.assigned_slot" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.tab">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tab</span></span><a class="headerlink" href="#nodriver.Element.tab" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tab</span></span><a class="headerlink" href="#nodriver.Element.tab" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.shadow_children">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_children</span></span><a class="headerlink" href="#nodriver.Element.shadow_children" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shadow_children</span></span><a class="headerlink" href="#nodriver.Element.shadow_children" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.save_to_dom">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_to_dom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.save_to_dom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.save_to_dom" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_to_dom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.save_to_dom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.save_to_dom" title="Link to this definition">¶</a></dt>
 <dd><p>saves element to dom
 :return:
 :rtype:</p>
@@ -447,13 +487,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.remove_from_dom">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_from_dom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.remove_from_dom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.remove_from_dom" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_from_dom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.remove_from_dom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.remove_from_dom" title="Link to this definition">¶</a></dt>
 <dd><p>removes the element from dom</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.update">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.update" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.update" title="Link to this definition">¶</a></dt>
 <dd><p>updates element to retrieve more properties. for example this enables
 <a class="reference internal" href="#nodriver.Element.children" title="nodriver.Element.children"><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></a> and <a class="reference internal" href="#nodriver.Element.parent" title="nodriver.Element.parent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></a> attributes.</p>
 <p>also resolves js opbject which is stored object in <a class="reference internal" href="#nodriver.Element.remote_object" title="nodriver.Element.remote_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remote_object</span></code></a></p>
@@ -476,17 +516,17 @@ is because when you are retrieving 100+ elements this becomes quite expensive.</
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.node">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node</span></span><a class="headerlink" href="#nodriver.Element.node" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node</span></span><a class="headerlink" href="#nodriver.Element.node" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.tree">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tree</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/dom.html#nodriver.cdp.dom.Node" title="nodriver.cdp.dom.Node"><span class="pre">Node</span></a></em><a class="headerlink" href="#nodriver.Element.tree" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tree</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/dom.html#nodriver.cdp.dom.Node" title="nodriver.cdp.dom.Node"><span class="pre">Node</span></a></em><a class="headerlink" href="#nodriver.Element.tree" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.attrs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attrs</span></span><a class="headerlink" href="#nodriver.Element.attrs" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attrs</span></span><a class="headerlink" href="#nodriver.Element.attrs" title="Link to this definition">¶</a></dt>
 <dd><p>attributes are stored here, however, you can set them directly on the element object as well.
 :return:
 :rtype:</p>
@@ -494,7 +534,7 @@ is because when you are retrieving 100+ elements this becomes quite expensive.</
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.parent">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#nodriver.Element" title="nodriver.core.element.Element"><span class="pre">Element</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#nodriver.Element.parent" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#nodriver.Element" title="nodriver.core.element.Element"><span class="pre">Element</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#nodriver.Element.parent" title="Link to this definition">¶</a></dt>
 <dd><p>get the parent element (node) of current element(node)
 :return:
 :rtype:</p>
@@ -502,7 +542,7 @@ is because when you are retrieving 100+ elements this becomes quite expensive.</
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.children">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nodriver.Element" title="nodriver.core.element.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#nodriver.Element.children" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nodriver.Element" title="nodriver.core.element.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#nodriver.Element.children" title="Link to this definition">¶</a></dt>
 <dd><p>returns the elements’ children. those children also have a children property
 so you can browse through the entire tree as well.
 :return:
@@ -511,17 +551,17 @@ so you can browse through the entire tree as well.
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.remote_object">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remote_object</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/runtime.html#nodriver.cdp.runtime.RemoteObject" title="nodriver.cdp.runtime.RemoteObject"><span class="pre">RemoteObject</span></a></em><a class="headerlink" href="#nodriver.Element.remote_object" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remote_object</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/runtime.html#nodriver.cdp.runtime.RemoteObject" title="nodriver.cdp.runtime.RemoteObject"><span class="pre">RemoteObject</span></a></em><a class="headerlink" href="#nodriver.Element.remote_object" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.object_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">object_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/runtime.html#nodriver.cdp.runtime.RemoteObjectId" title="nodriver.cdp.runtime.RemoteObjectId"><span class="pre">RemoteObjectId</span></a></em><a class="headerlink" href="#nodriver.Element.object_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">object_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../cdp/runtime.html#nodriver.cdp.runtime.RemoteObjectId" title="nodriver.cdp.runtime.RemoteObjectId"><span class="pre">RemoteObjectId</span></a></em><a class="headerlink" href="#nodriver.Element.object_id" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.click">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">click</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.click" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">click</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.click" title="Link to this definition">¶</a></dt>
 <dd><p>Click the element.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -535,12 +575,12 @@ so you can browse through the entire tree as well.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.get_js_attributes">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_js_attributes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_js_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_js_attributes" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_js_attributes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_js_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_js_attributes" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.apply">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">js_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_by_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.apply" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">js_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_by_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.apply" title="Link to this definition">¶</a></dt>
 <dd><p>apply javascript to this element. the given js_function string should accept the js element as parameter,
 and can be a arrow function, or function declaration.
 eg:</p>
@@ -554,8 +594,8 @@ eg:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>js_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – the js function definition which received this element.</p></li>
-<li><p><strong>return_by_value</strong> – </p></li>
+<li><p><strong>js_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – the js function definition which received this element.</p></li>
+<li><p><strong>return_by_value</strong></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -569,7 +609,7 @@ eg:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.get_position">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_position" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_position" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code></span></p>
@@ -579,16 +619,16 @@ eg:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.mouse_click">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_click" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_click" title="Link to this definition">¶</a></dt>
 <dd><p>native click (on element) . note: this likely does not work atm, use click() instead</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>button</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – str (default = “left”)</p></li>
-<li><p><strong>buttons</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – which button (default 1 = left)</p></li>
-<li><p><strong>modifiers</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – <em>(Optional)</em> Bit field representing pressed modifier keys.
+<li><p><strong>button</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – str (default = “left”)</p></li>
+<li><p><strong>buttons</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – which button (default 1 = left)</p></li>
+<li><p><strong>modifiers</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – <em>(Optional)</em> Bit field representing pressed modifier keys.
 Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).</p></li>
-<li><p><strong>_until_event</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>]</span>) – internal. event to wait for before returning</p></li>
+<li><p><strong>_until_event</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>]</span>) – internal. event to wait for before returning</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -599,16 +639,16 @@ Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.click_mouse">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">click_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nodriver.Element.click_mouse" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">click_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nodriver.Element.click_mouse" title="Link to this definition">¶</a></dt>
 <dd><p>native click (on element) . note: this likely does not work atm, use click() instead</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>button</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – str (default = “left”)</p></li>
-<li><p><strong>buttons</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – which button (default 1 = left)</p></li>
-<li><p><strong>modifiers</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – <em>(Optional)</em> Bit field representing pressed modifier keys.
+<li><p><strong>button</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – str (default = “left”)</p></li>
+<li><p><strong>buttons</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – which button (default 1 = left)</p></li>
+<li><p><strong>modifiers</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – <em>(Optional)</em> Bit field representing pressed modifier keys.
 Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).</p></li>
-<li><p><strong>_until_event</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>]</span>) – internal. event to wait for before returning</p></li>
+<li><p><strong>_until_event</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a>]</span>) – internal. event to wait for before returning</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -619,21 +659,29 @@ Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.mouse_move">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_move</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_move" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_move</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_move" title="Link to this definition">¶</a></dt>
 <dd><p>moves mouse (not click), to element position. when an element has an
 hover/mouseover effect, this would trigger it</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nodriver.Element.mouse_move_random">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_move_random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_move_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_move_random" title="Link to this definition">¶</a></dt>
+<dd><p>moves mouse (not click) to a random location within element bounds.
+when an element has a hover/mouseover effect, this would trigger it.
+random location between the element’s (left,top) and (right,bottom)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.mouse_drag">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_drag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_drag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_drag" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_drag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.mouse_drag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.mouse_drag" title="Link to this definition">¶</a></dt>
 <dd><p>drag an element to another element or target coordinates. dragging of elements should be supported  by the site of course</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>destination</strong> (<a class="reference internal" href="#nodriver.Element" title="nodriver.Element"><em>Element</em></a><em> or </em><em>coordinate as x</em><em>,</em><em>y tuple</em>) – another element where to drag to, or a tuple (x,y) of ints representing coordinate</p></li>
-<li><p><strong>relative</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – when True, treats coordinate as relative. for example (-100, 200) will move left 100px and down 200px</p></li>
-<li><p><strong>steps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – move in &lt;steps&gt; points, this could make it look more “natural” (default 1),
+<li><p><strong>relative</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></span>) – when True, treats coordinate as relative. for example (-100, 200) will move left 100px and down 200px</p></li>
+<li><p><strong>steps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – move in &lt;steps&gt; points, this could make it look more “natural” (default 1),
 but also a lot slower.
 for very smooth action use 50-100</p></li>
 </ul>
@@ -649,25 +697,40 @@ for very smooth action use 50-100</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.scroll_into_view">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scroll_into_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.scroll_into_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.scroll_into_view" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scroll_into_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.scroll_into_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.scroll_into_view" title="Link to this definition">¶</a></dt>
 <dd><p>scrolls element into view</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.clear_input">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clear_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.clear_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.clear_input" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clear_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_until_event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.clear_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.clear_input" title="Link to this definition">¶</a></dt>
 <dd><p>clears an input field</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.send_keys">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.send_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.send_keys" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.send_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.send_keys" title="Link to this definition">¶</a></dt>
 <dd><p>send text to an input field, or any other html element.</p>
-<p>hint, if you ever get stuck where using py:meth:<cite>~click</cite>
+<p>hint, if you ever get stuck where using py:meth:<code class="xref any docutils literal notranslate"><span class="pre">~click</span></code>
 does not work, sending the keystroke n or rn or a spacebar work wonders!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>text</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – text to send</p>
+<dd class="field-odd"><p><strong>text</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – text to send</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nodriver.Element.send_keys_random">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_keys_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.send_keys_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.send_keys_random" title="Link to this definition">¶</a></dt>
+<dd><p>send text to an input field, or any other html element,
+with a random delay between each keystroke to simulate human typing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span>) – text to send</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -677,24 +740,24 @@ does not work, sending the keystroke n or rn or a spacebar work wonders!</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.send_file">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">file_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.send_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.send_file" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">file_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.send_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.send_file" title="Link to this definition">¶</a></dt>
 <dd><p>some form input require a file (upload), a full path needs to be provided.
 this method sends 1 or more file(s) to the input field.</p>
 <p>needles to say, but make sure the field accepts multiple files if you want to send more files.
 otherwise the browser might crash.</p>
 <p>example :
-<cite>await fileinputElement.send_file(‘c:/temp/image.png’, ‘c:/users/myuser/lol.gif’)</cite></p>
+<code class="xref any docutils literal notranslate"><span class="pre">await</span> <span class="pre">fileinputElement.send_file('c:/temp/image.png',</span> <span class="pre">'c:/users/myuser/lol.gif')</span></code></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.focus">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">focus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.focus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.focus" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">focus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.focus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.focus" title="Link to this definition">¶</a></dt>
 <dd><p>focus the current element. often useful in form (select) fields</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.select_option">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_option</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.select_option"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.select_option" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_option</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.select_option"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.select_option" title="Link to this definition">¶</a></dt>
 <dd><p>for form (select) fields. when you have queried the options you can call this method on the option object.
 02/08/2024: fixed the problem where events are not fired when programattically selecting an option.</p>
 <p>calling <code class="xref py py-func docutils literal notranslate"><span class="pre">option.select_option()</span></code> will use that option as selected value.
@@ -703,22 +766,22 @@ does not work in all cases.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.set_value">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.set_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.set_value" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.set_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.set_value" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.set_text">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.set_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.set_text" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.set_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.set_text" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.get_html">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_html" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.get_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.get_html" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.text">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#nodriver.Element.text" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#nodriver.Element.text" title="Link to this definition">¶</a></dt>
 <dd><p>gets the text contents of this element
 note: this includes text in the form of script content, as those are also just ‘text nodes’</p>
 <dl class="field-list simple">
@@ -733,7 +796,7 @@ note: this includes text in the form of script content, as those are also just �
 
 <dl class="py property">
 <dt class="sig sig-object py" id="nodriver.Element.text_all">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_all</span></span><a class="headerlink" href="#nodriver.Element.text_all" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_all</span></span><a class="headerlink" href="#nodriver.Element.text_all" title="Link to this definition">¶</a></dt>
 <dd><p>gets the text contents of this element, and it’s children in a concatenated string
 note: this includes text in the form of script content, as those are also just ‘text nodes’
 :return:
@@ -742,19 +805,19 @@ note: this includes text in the form of script content, as those are also just �
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.query_selector_all">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query_selector_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.query_selector_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.query_selector_all" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query_selector_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.query_selector_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.query_selector_all" title="Link to this definition">¶</a></dt>
 <dd><p>like js querySelectorAll()</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.query_selector">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query_selector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.query_selector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.query_selector" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query_selector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.query_selector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.query_selector" title="Link to this definition">¶</a></dt>
 <dd><p>like js querySelector()</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.save_screenshot">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_screenshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpeg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.save_screenshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.save_screenshot" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_screenshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpeg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.save_screenshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.save_screenshot" title="Link to this definition">¶</a></dt>
 <dd><p>Saves a screenshot of this element (only)
 This is not the same as <a class="reference internal" href="tab.html#nodriver.Tab.save_screenshot" title="nodriver.Tab.save_screenshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tab.save_screenshot</span></code></a>, which saves a “regular” screenshot</p>
 <p>When the element is hidden, or has no size, or is otherwise not capturable, a RuntimeError is raised</p>
@@ -762,28 +825,28 @@ This is not the same as <a class="reference internal" href="tab.html#nodriver.Ta
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>PathLike</em>) – uses this as the save path</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – jpeg or png (defaults to jpeg)</p></li>
-<li><p><strong>scale</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</span>) – the scale of the screenshot, eg: 1 = size as is, 2 = double, 0.5 is half</p></li>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – jpeg or png (defaults to jpeg)</p></li>
+<li><p><strong>scale</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</span>) – the scale of the screenshot, eg: 1 = size as is, 2 = double, 0.5 is half</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the path/filename of saved screenshot</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.flash">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.flash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.flash" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.flash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.flash" title="Link to this definition">¶</a></dt>
 <dd><p>displays for a short time a red dot on the element (only if the element itself is visible)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coords</strong> (<em>x</em><em>,</em><em>y</em>) – x,y</p></li>
-<li><p><strong>duration</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – seconds (default 0.5)</p></li>
+<li><p><strong>duration</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span>) – seconds (default 0.5)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -797,7 +860,7 @@ This is not the same as <a class="reference internal" href="tab.html#nodriver.Ta
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.highlight_overlay">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">highlight_overlay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.highlight_overlay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.highlight_overlay" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">highlight_overlay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.highlight_overlay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.highlight_overlay" title="Link to this definition">¶</a></dt>
 <dd><p>highlights the element devtools-style. To remove the highlight,
 call the method again.
 :return:
@@ -806,14 +869,14 @@ call the method again.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.record_video">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">record_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.record_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.record_video" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">record_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.record_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.record_video" title="Link to this definition">¶</a></dt>
 <dd><p>experimental option.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – the desired filename</p></li>
-<li><p><strong>folder</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – the download folder path</p></li>
-<li><p><strong>duration</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</span>) – record for this many seconds and then download</p></li>
+<li><p><strong>filename</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – the desired filename</p></li>
+<li><p><strong>folder</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</span>) – the download folder path</p></li>
+<li><p><strong>duration</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</span>) – record for this many seconds and then download</p></li>
 </ul>
 </dd>
 </dl>
@@ -829,7 +892,7 @@ call the method again.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nodriver.Element.is_recording">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_recording</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.is_recording"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.is_recording" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_recording</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/nodriver/core/element.html#Element.is_recording"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nodriver.Element.is_recording" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -943,10 +1006,12 @@ call the method again.
 <li><a class="reference internal" href="#nodriver.Element.mouse_click"><code class="docutils literal notranslate"><span class="pre">Element.mouse_click()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.click_mouse"><code class="docutils literal notranslate"><span class="pre">Element.click_mouse()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.mouse_move"><code class="docutils literal notranslate"><span class="pre">Element.mouse_move()</span></code></a></li>
+<li><a class="reference internal" href="#nodriver.Element.mouse_move_random"><code class="docutils literal notranslate"><span class="pre">Element.mouse_move_random()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.mouse_drag"><code class="docutils literal notranslate"><span class="pre">Element.mouse_drag()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.scroll_into_view"><code class="docutils literal notranslate"><span class="pre">Element.scroll_into_view()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.clear_input"><code class="docutils literal notranslate"><span class="pre">Element.clear_input()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.send_keys"><code class="docutils literal notranslate"><span class="pre">Element.send_keys()</span></code></a></li>
+<li><a class="reference internal" href="#nodriver.Element.send_keys_random"><code class="docutils literal notranslate"><span class="pre">Element.send_keys_random()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.send_file"><code class="docutils literal notranslate"><span class="pre">Element.send_file()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.focus"><code class="docutils literal notranslate"><span class="pre">Element.focus()</span></code></a></li>
 <li><a class="reference internal" href="#nodriver.Element.select_option"><code class="docutils literal notranslate"><span class="pre">Element.select_option()</span></code></a></li>
@@ -976,8 +1041,8 @@ call the method again.
     </aside>
   </div>
 </div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

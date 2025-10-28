@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../../../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html">
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>nodriver.cdp.emulation - nodriver documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/./custom.css?v=3934642d" />
     
     
@@ -74,7 +74,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -89,34 +89,73 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -124,8 +163,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -133,16 +171,15 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -150,7 +187,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../../../index.html">
-  
   
   <span class="sidebar-brand-text">nodriver  documentation</span>
   
@@ -176,7 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../nodriver/classes/others_and_helpers.html">Other classes and Helper classes</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of CDP object</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input aria-label="Toggle navigation of CDP object" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/accessibility.html">Accessibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/animation.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/audits.html">Audits</a></li>
@@ -251,19 +287,18 @@
         </a>
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <h1>Source code for nodriver.cdp.emulation</h1><div class="highlight"><pre>
 <span></span><span class="c1"># DO NOT EDIT THIS FILE!</span>
 <span class="c1">#</span>
@@ -272,22 +307,22 @@
 <span class="c1">#</span>
 <span class="c1"># CDP domain: Emulation</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-<span class="kn">import</span> <span class="nn">enum</span>
-<span class="kn">import</span> <span class="nn">typing</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">event_class</span><span class="p">,</span> <span class="n">T_JSON_DICT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">event_class</span><span class="p">,</span> <span class="n">T_JSON_DICT</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">dom</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">network</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">page</span>
-<span class="kn">from</span> <span class="nn">deprecated.sphinx</span> <span class="kn">import</span> <span class="n">deprecated</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">dom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">network</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">page</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">deprecated.sphinx</span><span class="w"> </span><span class="kn">import</span> <span class="n">deprecated</span> <span class="c1"># type: ignore</span>
 
 
 <div class="viewcode-block" id="SafeAreaInsets">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SafeAreaInsets">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SafeAreaInsets</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SafeAreaInsets</span><span class="p">:</span>
     <span class="c1">#: Overrides safe-area-inset-top.</span>
     <span class="n">top</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -312,7 +347,7 @@
     <span class="c1">#: Overrides safe-area-max-inset-right.</span>
     <span class="n">right_max</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span>
@@ -333,7 +368,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SafeAreaInsets</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SafeAreaInsets</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">top</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">top_max</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;topMax&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;topMax&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
@@ -350,7 +385,7 @@
 <div class="viewcode-block" id="ScreenOrientation">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.ScreenOrientation">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ScreenOrientation</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScreenOrientation</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Screen orientation.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -360,14 +395,14 @@
     <span class="c1">#: Orientation angle.</span>
     <span class="n">angle</span><span class="p">:</span> <span class="nb">int</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;angle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angle</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenOrientation</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenOrientation</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">type_</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]),</span>
             <span class="n">angle</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;angle&#39;</span><span class="p">]),</span>
@@ -378,7 +413,7 @@
 <div class="viewcode-block" id="DisplayFeature">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.DisplayFeature">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">DisplayFeature</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DisplayFeature</span><span class="p">:</span>
     <span class="c1">#: Orientation of a display feature in relation to screen</span>
     <span class="n">orientation</span><span class="p">:</span> <span class="nb">str</span>
 
@@ -391,7 +426,7 @@
     <span class="c1">#: A display feature that only splits content will have a 0 mask_length.</span>
     <span class="n">mask_length</span><span class="p">:</span> <span class="nb">int</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">orientation</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
@@ -399,7 +434,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DisplayFeature</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DisplayFeature</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">orientation</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]),</span>
             <span class="n">offset</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]),</span>
@@ -411,17 +446,17 @@
 <div class="viewcode-block" id="DevicePosture">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.DevicePosture">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">DevicePosture</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DevicePosture</span><span class="p">:</span>
     <span class="c1">#: Current posture of the device</span>
     <span class="n">type_</span><span class="p">:</span> <span class="nb">str</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DevicePosture</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DevicePosture</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">type_</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]),</span>
         <span class="p">)</span></div>
@@ -431,19 +466,19 @@
 <div class="viewcode-block" id="MediaFeature">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.MediaFeature">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">MediaFeature</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MediaFeature</span><span class="p">:</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 
     <span class="n">value</span><span class="p">:</span> <span class="nb">str</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MediaFeature</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MediaFeature</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]),</span>
             <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]),</span>
@@ -453,7 +488,7 @@
 
 <div class="viewcode-block" id="VirtualTimePolicy">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.VirtualTimePolicy">[docs]</a>
-<span class="k">class</span> <span class="nc">VirtualTimePolicy</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VirtualTimePolicy</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    advance: If the scheduler runs out of immediate work, the virtual time base may fast forward to</span>
 <span class="sd">    allow the next delayed task (if any) to run; pause: The virtual time base may not advance;</span>
@@ -464,11 +499,11 @@
     <span class="n">PAUSE</span> <span class="o">=</span> <span class="s2">&quot;pause&quot;</span>
     <span class="n">PAUSE_IF_NETWORK_FETCHES_PENDING</span> <span class="o">=</span> <span class="s2">&quot;pauseIfNetworkFetchesPending&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VirtualTimePolicy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VirtualTimePolicy</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
@@ -476,7 +511,7 @@
 <div class="viewcode-block" id="UserAgentBrandVersion">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.UserAgentBrandVersion">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">UserAgentBrandVersion</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UserAgentBrandVersion</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Used to specify User Agent Client Hints to emulate. See https://wicg.github.io/ua-client-hints</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -484,14 +519,14 @@
 
     <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brand</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserAgentBrandVersion</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserAgentBrandVersion</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">brand</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]),</span>
             <span class="n">version</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]),</span>
@@ -502,7 +537,7 @@
 <div class="viewcode-block" id="UserAgentMetadata">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.UserAgentMetadata">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">UserAgentMetadata</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UserAgentMetadata</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Used to specify User Agent Client Hints to emulate. See https://wicg.github.io/ua-client-hints</span>
 <span class="sd">    Missing optional values will be filled in by the target with what it would normally use.</span>
@@ -533,7 +568,7 @@
     <span class="c1">#: See https://wicg.github.io/ua-client-hints/#sec-ch-ua-form-factors</span>
     <span class="n">form_factors</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;platform&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;platformVersion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform_version</span>
@@ -555,7 +590,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserAgentMetadata</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserAgentMetadata</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">platform</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;platform&#39;</span><span class="p">]),</span>
             <span class="n">platform_version</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;platformVersion&#39;</span><span class="p">]),</span>
@@ -574,7 +609,7 @@
 
 <div class="viewcode-block" id="SensorType">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorType">[docs]</a>
-<span class="k">class</span> <span class="nc">SensorType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Used to specify sensor types to emulate.</span>
 <span class="sd">    See https://w3c.github.io/sensors/#automation for more information.</span>
@@ -588,11 +623,11 @@
     <span class="n">MAGNETOMETER</span> <span class="o">=</span> <span class="s2">&quot;magnetometer&quot;</span>
     <span class="n">RELATIVE_ORIENTATION</span> <span class="o">=</span> <span class="s2">&quot;relative-orientation&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorType</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorType</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
@@ -600,14 +635,14 @@
 <div class="viewcode-block" id="SensorMetadata">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorMetadata">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SensorMetadata</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorMetadata</span><span class="p">:</span>
     <span class="n">available</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">minimum_frequency</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">maximum_frequency</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">available</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">json</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">available</span>
@@ -618,7 +653,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorMetadata</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorMetadata</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">available</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">minimum_frequency</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;minimumFrequency&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;minimumFrequency&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
@@ -630,16 +665,16 @@
 <div class="viewcode-block" id="SensorReadingSingle">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorReadingSingle">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SensorReadingSingle</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorReadingSingle</span><span class="p">:</span>
     <span class="n">value</span><span class="p">:</span> <span class="nb">float</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingSingle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingSingle</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">value</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]),</span>
         <span class="p">)</span></div>
@@ -649,14 +684,14 @@
 <div class="viewcode-block" id="SensorReadingXYZ">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorReadingXYZ">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SensorReadingXYZ</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorReadingXYZ</span><span class="p">:</span>
     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
 
     <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
 
     <span class="n">z</span><span class="p">:</span> <span class="nb">float</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
@@ -664,7 +699,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingXYZ</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingXYZ</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">x</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span>
             <span class="n">y</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span>
@@ -676,7 +711,7 @@
 <div class="viewcode-block" id="SensorReadingQuaternion">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorReadingQuaternion">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SensorReadingQuaternion</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorReadingQuaternion</span><span class="p">:</span>
     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
 
     <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
@@ -685,7 +720,7 @@
 
     <span class="n">w</span><span class="p">:</span> <span class="nb">float</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
@@ -694,7 +729,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingQuaternion</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReadingQuaternion</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">x</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span>
             <span class="n">y</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span>
@@ -707,14 +742,14 @@
 <div class="viewcode-block" id="SensorReading">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.SensorReading">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SensorReading</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SensorReading</span><span class="p">:</span>
     <span class="n">single</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">SensorReadingSingle</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">xyz</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">SensorReadingXYZ</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">quaternion</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">SensorReadingQuaternion</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">single</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">json</span><span class="p">[</span><span class="s1">&#39;single&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
@@ -725,7 +760,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReading</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SensorReading</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">single</span><span class="o">=</span><span class="n">SensorReadingSingle</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;single&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;single&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">xyz</span><span class="o">=</span><span class="n">SensorReadingXYZ</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;xyz&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
@@ -736,31 +771,31 @@
 
 <div class="viewcode-block" id="PressureSource">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.PressureSource">[docs]</a>
-<span class="k">class</span> <span class="nc">PressureSource</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PressureSource</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">CPU</span> <span class="o">=</span> <span class="s2">&quot;cpu&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureSource</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureSource</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
 
 <div class="viewcode-block" id="PressureState">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.PressureState">[docs]</a>
-<span class="k">class</span> <span class="nc">PressureState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PressureState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">NOMINAL</span> <span class="o">=</span> <span class="s2">&quot;nominal&quot;</span>
     <span class="n">FAIR</span> <span class="o">=</span> <span class="s2">&quot;fair&quot;</span>
     <span class="n">SERIOUS</span> <span class="o">=</span> <span class="s2">&quot;serious&quot;</span>
     <span class="n">CRITICAL</span> <span class="o">=</span> <span class="s2">&quot;critical&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureState</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureState</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
@@ -768,17 +803,17 @@
 <div class="viewcode-block" id="PressureMetadata">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.PressureMetadata">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">PressureMetadata</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PressureMetadata</span><span class="p">:</span>
     <span class="n">available</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">available</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">json</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">available</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureMetadata</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PressureMetadata</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">available</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
         <span class="p">)</span></div>
@@ -788,7 +823,7 @@
 <div class="viewcode-block" id="WorkAreaInsets">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.WorkAreaInsets">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">WorkAreaInsets</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WorkAreaInsets</span><span class="p">:</span>
     <span class="c1">#: Work area top inset in pixels. Default is 0;</span>
     <span class="n">top</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -801,7 +836,7 @@
     <span class="c1">#: Work area right inset in pixels. Default is 0;</span>
     <span class="n">right</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span>
@@ -814,7 +849,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WorkAreaInsets</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WorkAreaInsets</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">top</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">left</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
@@ -826,15 +861,15 @@
 
 <div class="viewcode-block" id="ScreenId">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.ScreenId">[docs]</a>
-<span class="k">class</span> <span class="nc">ScreenId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScreenId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenId</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenId</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;ScreenId(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span></div>
 
 
@@ -842,7 +877,7 @@
 <div class="viewcode-block" id="ScreenInfo">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.ScreenInfo">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ScreenInfo</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScreenInfo</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Screen information similar to the one returned by window.getScreenDetails() method,</span>
 <span class="sd">    see https://w3c.github.io/window-management/#screendetailed.</span>
@@ -895,7 +930,7 @@
     <span class="c1">#: Specifies the unique identifier of the screen.</span>
     <span class="n">id_</span><span class="p">:</span> <span class="n">ScreenId</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span>
@@ -916,7 +951,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenInfo</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScreenInfo</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">left</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]),</span>
             <span class="n">top</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]),</span>
@@ -940,18 +975,18 @@
 
 <div class="viewcode-block" id="DisabledImageType">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.DisabledImageType">[docs]</a>
-<span class="k">class</span> <span class="nc">DisabledImageType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DisabledImageType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Enum of image types that can be disabled.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">AVIF</span> <span class="o">=</span> <span class="s2">&quot;avif&quot;</span>
     <span class="n">WEBP</span> <span class="o">=</span> <span class="s2">&quot;webp&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DisabledImageType</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DisabledImageType</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
@@ -959,7 +994,7 @@
 <div class="viewcode-block" id="can_emulate">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.can_emulate">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">can_emulate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="nb">bool</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">can_emulate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="nb">bool</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Tells whether emulation is supported.</span>
 
@@ -977,7 +1012,7 @@
 
 <div class="viewcode-block" id="clear_device_metrics_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.clear_device_metrics_override">[docs]</a>
-<span class="k">def</span> <span class="nf">clear_device_metrics_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_device_metrics_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Clears the overridden device metrics.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -990,7 +1025,7 @@
 
 <div class="viewcode-block" id="clear_geolocation_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.clear_geolocation_override">[docs]</a>
-<span class="k">def</span> <span class="nf">clear_geolocation_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_geolocation_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Clears the overridden Geolocation Position and Error.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1003,7 +1038,7 @@
 
 <div class="viewcode-block" id="reset_page_scale_factor">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.reset_page_scale_factor">[docs]</a>
-<span class="k">def</span> <span class="nf">reset_page_scale_factor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reset_page_scale_factor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Requests that page scale factor is reset to initial values.</span>
 
@@ -1018,7 +1053,7 @@
 
 <div class="viewcode-block" id="set_focus_emulation_enabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_focus_emulation_enabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_focus_emulation_enabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_focus_emulation_enabled</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1040,7 +1075,7 @@
 
 <div class="viewcode-block" id="set_auto_dark_mode_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_auto_dark_mode_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_auto_dark_mode_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_auto_dark_mode_override</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1063,7 +1098,7 @@
 
 <div class="viewcode-block" id="set_cpu_throttling_rate">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_cpu_throttling_rate">[docs]</a>
-<span class="k">def</span> <span class="nf">set_cpu_throttling_rate</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_cpu_throttling_rate</span><span class="p">(</span>
         <span class="n">rate</span><span class="p">:</span> <span class="nb">float</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1083,7 +1118,7 @@
 
 <div class="viewcode-block" id="set_default_background_color_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_default_background_color_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_default_background_color_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_default_background_color_override</span><span class="p">(</span>
         <span class="n">color</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">dom</span><span class="o">.</span><span class="n">RGBA</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1105,7 +1140,7 @@
 
 <div class="viewcode-block" id="set_safe_area_insets_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_safe_area_insets_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_safe_area_insets_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_safe_area_insets_override</span><span class="p">(</span>
         <span class="n">insets</span><span class="p">:</span> <span class="n">SafeAreaInsets</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1128,7 +1163,7 @@
 
 <div class="viewcode-block" id="set_device_metrics_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_device_metrics_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_device_metrics_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_device_metrics_override</span><span class="p">(</span>
         <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">device_scale_factor</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -1199,7 +1234,7 @@
 
 <div class="viewcode-block" id="set_device_posture_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_device_posture_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_device_posture_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_device_posture_override</span><span class="p">(</span>
         <span class="n">posture</span><span class="p">:</span> <span class="n">DevicePosture</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1222,7 +1257,7 @@
 
 <div class="viewcode-block" id="clear_device_posture_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.clear_device_posture_override">[docs]</a>
-<span class="k">def</span> <span class="nf">clear_device_posture_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_device_posture_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Clears a device posture override set with either setDeviceMetricsOverride()</span>
 <span class="sd">    or setDevicePostureOverride() and starts using posture information from the</span>
@@ -1240,7 +1275,7 @@
 
 <div class="viewcode-block" id="set_display_features_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_display_features_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_display_features_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_display_features_override</span><span class="p">(</span>
         <span class="n">features</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">DisplayFeature</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1263,7 +1298,7 @@
 
 <div class="viewcode-block" id="clear_display_features_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.clear_display_features_override">[docs]</a>
-<span class="k">def</span> <span class="nf">clear_display_features_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_display_features_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Clears the display features override set with either setDeviceMetricsOverride()</span>
 <span class="sd">    or setDisplayFeaturesOverride() and starts using display features from the</span>
@@ -1281,7 +1316,7 @@
 
 <div class="viewcode-block" id="set_scrollbars_hidden">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_scrollbars_hidden">[docs]</a>
-<span class="k">def</span> <span class="nf">set_scrollbars_hidden</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_scrollbars_hidden</span><span class="p">(</span>
         <span class="n">hidden</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1303,7 +1338,7 @@
 
 <div class="viewcode-block" id="set_document_cookie_disabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_document_cookie_disabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_document_cookie_disabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_document_cookie_disabled</span><span class="p">(</span>
         <span class="n">disabled</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1325,7 +1360,7 @@
 
 <div class="viewcode-block" id="set_emit_touch_events_for_mouse">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_emit_touch_events_for_mouse">[docs]</a>
-<span class="k">def</span> <span class="nf">set_emit_touch_events_for_mouse</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_emit_touch_events_for_mouse</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="n">configuration</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1351,7 +1386,7 @@
 
 <div class="viewcode-block" id="set_emulated_media">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_emulated_media">[docs]</a>
-<span class="k">def</span> <span class="nf">set_emulated_media</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_emulated_media</span><span class="p">(</span>
         <span class="n">media</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">features</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">MediaFeature</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1376,7 +1411,7 @@
 
 <div class="viewcode-block" id="set_emulated_vision_deficiency">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_emulated_vision_deficiency">[docs]</a>
-<span class="k">def</span> <span class="nf">set_emulated_vision_deficiency</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_emulated_vision_deficiency</span><span class="p">(</span>
         <span class="n">type_</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1396,7 +1431,7 @@
 
 <div class="viewcode-block" id="set_emulated_os_text_scale">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_emulated_os_text_scale">[docs]</a>
-<span class="k">def</span> <span class="nf">set_emulated_os_text_scale</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_emulated_os_text_scale</span><span class="p">(</span>
         <span class="n">scale</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1417,7 +1452,7 @@
 
 <div class="viewcode-block" id="set_geolocation_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_geolocation_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_geolocation_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_geolocation_override</span><span class="p">(</span>
         <span class="n">latitude</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">longitude</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">accuracy</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1463,7 +1498,7 @@
 
 <div class="viewcode-block" id="get_overridden_sensor_information">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.get_overridden_sensor_information">[docs]</a>
-<span class="k">def</span> <span class="nf">get_overridden_sensor_information</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_overridden_sensor_information</span><span class="p">(</span>
         <span class="n">type_</span><span class="p">:</span> <span class="n">SensorType</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1487,7 +1522,7 @@
 
 <div class="viewcode-block" id="set_sensor_override_enabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_sensor_override_enabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_sensor_override_enabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_sensor_override_enabled</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="n">type_</span><span class="p">:</span> <span class="n">SensorType</span><span class="p">,</span>
         <span class="n">metadata</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">SensorMetadata</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1520,7 +1555,7 @@
 
 <div class="viewcode-block" id="set_sensor_override_readings">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_sensor_override_readings">[docs]</a>
-<span class="k">def</span> <span class="nf">set_sensor_override_readings</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_sensor_override_readings</span><span class="p">(</span>
         <span class="n">type_</span><span class="p">:</span> <span class="n">SensorType</span><span class="p">,</span>
         <span class="n">reading</span><span class="p">:</span> <span class="n">SensorReading</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1546,7 +1581,7 @@
 
 <div class="viewcode-block" id="set_pressure_source_override_enabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_pressure_source_override_enabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_pressure_source_override_enabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_pressure_source_override_enabled</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="n">source</span><span class="p">:</span> <span class="n">PressureSource</span><span class="p">,</span>
         <span class="n">metadata</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">PressureMetadata</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1578,7 +1613,7 @@
 
 <div class="viewcode-block" id="set_pressure_state_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_pressure_state_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_pressure_state_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_pressure_state_override</span><span class="p">(</span>
         <span class="n">source</span><span class="p">:</span> <span class="n">PressureSource</span><span class="p">,</span>
         <span class="n">state</span><span class="p">:</span> <span class="n">PressureState</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1606,7 +1641,7 @@
 
 <div class="viewcode-block" id="set_pressure_data_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_pressure_data_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_pressure_data_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_pressure_data_override</span><span class="p">(</span>
         <span class="n">source</span><span class="p">:</span> <span class="n">PressureSource</span><span class="p">,</span>
         <span class="n">state</span><span class="p">:</span> <span class="n">PressureState</span><span class="p">,</span>
         <span class="n">own_contribution_estimate</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1637,7 +1672,7 @@
 
 <div class="viewcode-block" id="set_idle_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_idle_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_idle_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_idle_override</span><span class="p">(</span>
         <span class="n">is_user_active</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="n">is_screen_unlocked</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1660,7 +1695,7 @@
 
 <div class="viewcode-block" id="clear_idle_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.clear_idle_override">[docs]</a>
-<span class="k">def</span> <span class="nf">clear_idle_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_idle_override</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Clears Idle state overrides.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1674,7 +1709,7 @@
 <div class="viewcode-block" id="set_navigator_overrides">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_navigator_overrides">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">set_navigator_overrides</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_navigator_overrides</span><span class="p">(</span>
         <span class="n">platform</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1698,7 +1733,7 @@
 
 <div class="viewcode-block" id="set_page_scale_factor">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_page_scale_factor">[docs]</a>
-<span class="k">def</span> <span class="nf">set_page_scale_factor</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_page_scale_factor</span><span class="p">(</span>
         <span class="n">page_scale_factor</span><span class="p">:</span> <span class="nb">float</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1720,7 +1755,7 @@
 
 <div class="viewcode-block" id="set_script_execution_disabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_script_execution_disabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_script_execution_disabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_script_execution_disabled</span><span class="p">(</span>
         <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1740,7 +1775,7 @@
 
 <div class="viewcode-block" id="set_touch_emulation_enabled">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_touch_emulation_enabled">[docs]</a>
-<span class="k">def</span> <span class="nf">set_touch_emulation_enabled</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_touch_emulation_enabled</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="n">max_touch_points</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1764,7 +1799,7 @@
 
 <div class="viewcode-block" id="set_virtual_time_policy">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_virtual_time_policy">[docs]</a>
-<span class="k">def</span> <span class="nf">set_virtual_time_policy</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_virtual_time_policy</span><span class="p">(</span>
         <span class="n">policy</span><span class="p">:</span> <span class="n">VirtualTimePolicy</span><span class="p">,</span>
         <span class="n">budget</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">max_virtual_time_task_starvation_count</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1801,7 +1836,7 @@
 
 <div class="viewcode-block" id="set_locale_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_locale_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_locale_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_locale_override</span><span class="p">(</span>
         <span class="n">locale</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1824,7 +1859,7 @@
 
 <div class="viewcode-block" id="set_timezone_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_timezone_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_timezone_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_timezone_override</span><span class="p">(</span>
         <span class="n">timezone_id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1845,7 +1880,7 @@
 <div class="viewcode-block" id="set_visible_size">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_visible_size">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">set_visible_size</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_visible_size</span><span class="p">(</span>
         <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">height</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1874,7 +1909,7 @@
 
 <div class="viewcode-block" id="set_disabled_image_types">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_disabled_image_types">[docs]</a>
-<span class="k">def</span> <span class="nf">set_disabled_image_types</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_disabled_image_types</span><span class="p">(</span>
         <span class="n">image_types</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">DisabledImageType</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1896,7 +1931,7 @@
 
 <div class="viewcode-block" id="set_data_saver_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_data_saver_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_data_saver_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_data_saver_override</span><span class="p">(</span>
         <span class="n">data_saver_enabled</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1919,7 +1954,7 @@
 
 <div class="viewcode-block" id="set_hardware_concurrency_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_hardware_concurrency_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_hardware_concurrency_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_hardware_concurrency_override</span><span class="p">(</span>
         <span class="n">hardware_concurrency</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1941,7 +1976,7 @@
 
 <div class="viewcode-block" id="set_user_agent_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_user_agent_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_user_agent_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_user_agent_override</span><span class="p">(</span>
         <span class="n">user_agent</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">accept_language</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">platform</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1974,7 +2009,7 @@
 
 <div class="viewcode-block" id="set_automation_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_automation_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_automation_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_automation_override</span><span class="p">(</span>
         <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1996,7 +2031,7 @@
 
 <div class="viewcode-block" id="set_small_viewport_height_difference_override">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.set_small_viewport_height_difference_override">[docs]</a>
-<span class="k">def</span> <span class="nf">set_small_viewport_height_difference_override</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_small_viewport_height_difference_override</span><span class="p">(</span>
         <span class="n">difference</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -2019,7 +2054,7 @@
 
 <div class="viewcode-block" id="get_screen_infos">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.get_screen_infos">[docs]</a>
-<span class="k">def</span> <span class="nf">get_screen_infos</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">ScreenInfo</span><span class="p">]]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_screen_infos</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">ScreenInfo</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Returns device&#39;s screen configuration.</span>
 
@@ -2037,7 +2072,7 @@
 
 <div class="viewcode-block" id="add_screen">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.add_screen">[docs]</a>
-<span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_screen</span><span class="p">(</span>
         <span class="n">left</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">top</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -2094,7 +2129,7 @@
 
 <div class="viewcode-block" id="remove_screen">
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.remove_screen">[docs]</a>
-<span class="k">def</span> <span class="nf">remove_screen</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_screen</span><span class="p">(</span>
         <span class="n">screen_id</span><span class="p">:</span> <span class="n">ScreenId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -2118,7 +2153,7 @@
 <a class="viewcode-back" href="../../../nodriver/cdp/emulation.html#nodriver.cdp.emulation.VirtualTimeBudgetExpired">[docs]</a>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Emulation.virtualTimeBudgetExpired&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">VirtualTimeBudgetExpired</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VirtualTimeBudgetExpired</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    **EXPERIMENTAL**</span>
 
@@ -2127,7 +2162,7 @@
 
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VirtualTimeBudgetExpired</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VirtualTimeBudgetExpired</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
 
         <span class="p">)</span></div>
@@ -2165,8 +2200,8 @@
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

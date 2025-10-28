@@ -1,14 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../../../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html">
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>nodriver.cdp.debugger - nodriver documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/./custom.css?v=3934642d" />
     
     
@@ -74,7 +74,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -89,34 +89,73 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -124,8 +163,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -133,16 +171,15 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -150,7 +187,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../../../index.html">
-  
   
   <span class="sidebar-brand-text">nodriver  documentation</span>
   
@@ -176,7 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../nodriver/classes/others_and_helpers.html">Other classes and Helper classes</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of CDP object</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../nodriver/cdp.html">CDP object</a><input aria-label="Toggle navigation of CDP object" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/accessibility.html">Accessibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/animation.html">Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodriver/cdp/audits.html">Audits</a></li>
@@ -251,19 +287,18 @@
         </a>
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <h1>Source code for nodriver.cdp.debugger</h1><div class="highlight"><pre>
 <span></span><span class="c1"># DO NOT EDIT THIS FILE!</span>
 <span class="c1">#</span>
@@ -272,48 +307,48 @@
 <span class="c1">#</span>
 <span class="c1"># CDP domain: Debugger</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-<span class="kn">import</span> <span class="nn">enum</span>
-<span class="kn">import</span> <span class="nn">typing</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">event_class</span><span class="p">,</span> <span class="n">T_JSON_DICT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">event_class</span><span class="p">,</span> <span class="n">T_JSON_DICT</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">runtime</span>
-<span class="kn">from</span> <span class="nn">deprecated.sphinx</span> <span class="kn">import</span> <span class="n">deprecated</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">runtime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">deprecated.sphinx</span><span class="w"> </span><span class="kn">import</span> <span class="n">deprecated</span> <span class="c1"># type: ignore</span>
 
 
 <div class="viewcode-block" id="BreakpointId">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.BreakpointId">[docs]</a>
-<span class="k">class</span> <span class="nc">BreakpointId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BreakpointId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Breakpoint identifier.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakpointId</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakpointId</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;BreakpointId(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span></div>
 
 
 
 <div class="viewcode-block" id="CallFrameId">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.CallFrameId">[docs]</a>
-<span class="k">class</span> <span class="nc">CallFrameId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CallFrameId</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Call frame identifier.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CallFrameId</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CallFrameId</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;CallFrameId(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span></div>
 
 
@@ -321,7 +356,7 @@
 <div class="viewcode-block" id="Location">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.Location">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Location</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Location</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Location in the source code.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -334,7 +369,7 @@
     <span class="c1">#: Column number in the script (0-based).</span>
     <span class="n">column_number</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">script_id</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_number</span>
@@ -343,7 +378,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Location</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Location</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">script_id</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]),</span>
             <span class="n">line_number</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]),</span>
@@ -355,7 +390,7 @@
 <div class="viewcode-block" id="ScriptPosition">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.ScriptPosition">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ScriptPosition</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScriptPosition</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Location in the source code.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -363,14 +398,14 @@
 
     <span class="n">column_number</span><span class="p">:</span> <span class="nb">int</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_number</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;columnNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_number</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptPosition</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptPosition</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">line_number</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]),</span>
             <span class="n">column_number</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;columnNumber&#39;</span><span class="p">]),</span>
@@ -381,7 +416,7 @@
 <div class="viewcode-block" id="LocationRange">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.LocationRange">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">LocationRange</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LocationRange</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Location range within one script.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -391,7 +426,7 @@
 
     <span class="n">end</span><span class="p">:</span> <span class="n">ScriptPosition</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">script_id</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
@@ -399,7 +434,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LocationRange</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LocationRange</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">script_id</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]),</span>
             <span class="n">start</span><span class="o">=</span><span class="n">ScriptPosition</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]),</span>
@@ -411,7 +446,7 @@
 <div class="viewcode-block" id="CallFrame">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.CallFrame">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">CallFrame</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CallFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    JavaScript call frame. Array of call frames form the call stack.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -447,7 +482,7 @@
     <span class="c1">#: successful, but it is very likely.</span>
     <span class="n">can_be_restarted</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;callFrameId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_frame_id</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;functionName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function_name</span>
@@ -464,7 +499,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CallFrame</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CallFrame</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">call_frame_id</span><span class="o">=</span><span class="n">CallFrameId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;callFrameId&#39;</span><span class="p">]),</span>
             <span class="n">function_name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;functionName&#39;</span><span class="p">]),</span>
@@ -482,7 +517,7 @@
 <div class="viewcode-block" id="Scope">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.Scope">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Scope</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Scope</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Scope description.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -502,7 +537,7 @@
     <span class="c1">#: Location in the source code where scope ends</span>
     <span class="n">end_location</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">Location</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
@@ -515,7 +550,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Scope</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Scope</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">type_</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]),</span>
             <span class="n">object_</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">RemoteObject</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]),</span>
@@ -529,7 +564,7 @@
 <div class="viewcode-block" id="SearchMatch">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.SearchMatch">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">SearchMatch</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchMatch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Search match for resource.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -539,14 +574,14 @@
     <span class="c1">#: Line with match content.</span>
     <span class="n">line_content</span><span class="p">:</span> <span class="nb">str</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_number</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineContent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_content</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SearchMatch</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SearchMatch</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">line_number</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]),</span>
             <span class="n">line_content</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineContent&#39;</span><span class="p">]),</span>
@@ -557,7 +592,7 @@
 <div class="viewcode-block" id="BreakLocation">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.BreakLocation">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">BreakLocation</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BreakLocation</span><span class="p">:</span>
     <span class="c1">#: Script identifier as reported in the ``Debugger.scriptParsed``.</span>
     <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span>
 
@@ -569,7 +604,7 @@
 
     <span class="n">type_</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">script_id</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_number</span>
@@ -580,7 +615,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakLocation</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakLocation</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">script_id</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]),</span>
             <span class="n">line_number</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;lineNumber&#39;</span><span class="p">]),</span>
@@ -593,21 +628,21 @@
 <div class="viewcode-block" id="WasmDisassemblyChunk">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.WasmDisassemblyChunk">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">WasmDisassemblyChunk</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WasmDisassemblyChunk</span><span class="p">:</span>
     <span class="c1">#: The next chunk of disassembled lines.</span>
     <span class="n">lines</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 
     <span class="c1">#: The bytecode offsets describing the start of each line.</span>
     <span class="n">bytecode_offsets</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">]</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;bytecodeOffsets&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bytecode_offsets</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WasmDisassemblyChunk</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WasmDisassemblyChunk</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">lines</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">json</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]],</span>
             <span class="n">bytecode_offsets</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">json</span><span class="p">[</span><span class="s1">&#39;bytecodeOffsets&#39;</span><span class="p">]],</span>
@@ -617,18 +652,18 @@
 
 <div class="viewcode-block" id="ScriptLanguage">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.ScriptLanguage">[docs]</a>
-<span class="k">class</span> <span class="nc">ScriptLanguage</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScriptLanguage</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Enum of possible script languages.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">JAVA_SCRIPT</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span>
     <span class="n">WEB_ASSEMBLY</span> <span class="o">=</span> <span class="s2">&quot;WebAssembly&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptLanguage</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptLanguage</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">json</span><span class="p">)</span></div>
 
 
@@ -636,7 +671,7 @@
 <div class="viewcode-block" id="DebugSymbols">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.DebugSymbols">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">DebugSymbols</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DebugSymbols</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Debug symbols available for a wasm script.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -646,7 +681,7 @@
     <span class="c1">#: URL of the external symbol source.</span>
     <span class="n">external_url</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -654,7 +689,7 @@
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DebugSymbols</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DebugSymbols</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">type_</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]),</span>
             <span class="n">external_url</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;externalURL&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;externalURL&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
@@ -665,21 +700,21 @@
 <div class="viewcode-block" id="ResolvedBreakpoint">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.ResolvedBreakpoint">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ResolvedBreakpoint</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResolvedBreakpoint</span><span class="p">:</span>
     <span class="c1">#: Breakpoint unique identifier.</span>
     <span class="n">breakpoint_id</span><span class="p">:</span> <span class="n">BreakpointId</span>
 
     <span class="c1">#: Actual breakpoint location.</span>
     <span class="n">location</span><span class="p">:</span> <span class="n">Location</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T_JSON_DICT</span><span class="p">:</span>
         <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;breakpointId&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakpoint_id</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="n">json</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">json</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResolvedBreakpoint</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ResolvedBreakpoint</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">breakpoint_id</span><span class="o">=</span><span class="n">BreakpointId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;breakpointId&#39;</span><span class="p">]),</span>
             <span class="n">location</span><span class="o">=</span><span class="n">Location</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]),</span>
@@ -689,7 +724,7 @@
 
 <div class="viewcode-block" id="continue_to_location">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.continue_to_location">[docs]</a>
-<span class="k">def</span> <span class="nf">continue_to_location</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">continue_to_location</span><span class="p">(</span>
         <span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span>
         <span class="n">target_call_frames</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -713,7 +748,7 @@
 
 <div class="viewcode-block" id="disable">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.disable">[docs]</a>
-<span class="k">def</span> <span class="nf">disable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">disable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Disables debugger for given page.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -726,7 +761,7 @@
 
 <div class="viewcode-block" id="enable">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.enable">[docs]</a>
-<span class="k">def</span> <span class="nf">enable</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span>
         <span class="n">max_scripts_cache_size</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">runtime</span><span class="o">.</span><span class="n">UniqueDebuggerId</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -750,7 +785,7 @@
 
 <div class="viewcode-block" id="evaluate_on_call_frame">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.evaluate_on_call_frame">[docs]</a>
-<span class="k">def</span> <span class="nf">evaluate_on_call_frame</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_on_call_frame</span><span class="p">(</span>
         <span class="n">call_frame_id</span><span class="p">:</span> <span class="n">CallFrameId</span><span class="p">,</span>
         <span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">object_group</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -809,7 +844,7 @@
 
 <div class="viewcode-block" id="get_possible_breakpoints">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.get_possible_breakpoints">[docs]</a>
-<span class="k">def</span> <span class="nf">get_possible_breakpoints</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_possible_breakpoints</span><span class="p">(</span>
         <span class="n">start</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span>
         <span class="n">end</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">Location</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">restrict_to_function</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -840,7 +875,7 @@
 
 <div class="viewcode-block" id="get_script_source">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.get_script_source">[docs]</a>
-<span class="k">def</span> <span class="nf">get_script_source</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_script_source</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -868,7 +903,7 @@
 
 <div class="viewcode-block" id="disassemble_wasm_module">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.disassemble_wasm_module">[docs]</a>
-<span class="k">def</span> <span class="nf">disassemble_wasm_module</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">disassemble_wasm_module</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">int</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">WasmDisassemblyChunk</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -902,7 +937,7 @@
 
 <div class="viewcode-block" id="next_wasm_disassembly_chunk">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.next_wasm_disassembly_chunk">[docs]</a>
-<span class="k">def</span> <span class="nf">next_wasm_disassembly_chunk</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">next_wasm_disassembly_chunk</span><span class="p">(</span>
         <span class="n">stream_id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">WasmDisassemblyChunk</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -930,7 +965,7 @@
 <div class="viewcode-block" id="get_wasm_bytecode">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.get_wasm_bytecode">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">get_wasm_bytecode</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_wasm_bytecode</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -954,7 +989,7 @@
 
 <div class="viewcode-block" id="get_stack_trace">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.get_stack_trace">[docs]</a>
-<span class="k">def</span> <span class="nf">get_stack_trace</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_stack_trace</span><span class="p">(</span>
         <span class="n">stack_trace_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">StackTraceId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">runtime</span><span class="o">.</span><span class="n">StackTrace</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -978,7 +1013,7 @@
 
 <div class="viewcode-block" id="pause">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.pause">[docs]</a>
-<span class="k">def</span> <span class="nf">pause</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pause</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Stops on the next JavaScript statement.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -992,7 +1027,7 @@
 <div class="viewcode-block" id="pause_on_async_call">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.pause_on_async_call">[docs]</a>
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">pause_on_async_call</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pause_on_async_call</span><span class="p">(</span>
         <span class="n">parent_stack_trace_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">StackTraceId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1016,7 +1051,7 @@
 
 <div class="viewcode-block" id="remove_breakpoint">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.remove_breakpoint">[docs]</a>
-<span class="k">def</span> <span class="nf">remove_breakpoint</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_breakpoint</span><span class="p">(</span>
         <span class="n">breakpoint_id</span><span class="p">:</span> <span class="n">BreakpointId</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1036,7 +1071,7 @@
 
 <div class="viewcode-block" id="restart_frame">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.restart_frame">[docs]</a>
-<span class="k">def</span> <span class="nf">restart_frame</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">restart_frame</span><span class="p">(</span>
         <span class="n">call_frame_id</span><span class="p">:</span> <span class="n">CallFrameId</span><span class="p">,</span>
         <span class="n">mode</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">CallFrame</span><span class="p">],</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">runtime</span><span class="o">.</span><span class="n">StackTrace</span><span class="p">],</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">runtime</span><span class="o">.</span><span class="n">StackTraceId</span><span class="p">]]]:</span>
@@ -1082,7 +1117,7 @@
 
 <div class="viewcode-block" id="resume">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.resume">[docs]</a>
-<span class="k">def</span> <span class="nf">resume</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">resume</span><span class="p">(</span>
         <span class="n">terminate_on_resume</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1103,7 +1138,7 @@
 
 <div class="viewcode-block" id="search_in_content">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.search_in_content">[docs]</a>
-<span class="k">def</span> <span class="nf">search_in_content</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">search_in_content</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="p">,</span>
         <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">case_sensitive</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1136,7 +1171,7 @@
 
 <div class="viewcode-block" id="set_async_call_stack_depth">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_async_call_stack_depth">[docs]</a>
-<span class="k">def</span> <span class="nf">set_async_call_stack_depth</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_async_call_stack_depth</span><span class="p">(</span>
         <span class="n">max_depth</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1156,7 +1191,7 @@
 
 <div class="viewcode-block" id="set_blackbox_execution_contexts">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_blackbox_execution_contexts">[docs]</a>
-<span class="k">def</span> <span class="nf">set_blackbox_execution_contexts</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_blackbox_execution_contexts</span><span class="p">(</span>
         <span class="n">unique_ids</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1180,7 +1215,7 @@
 
 <div class="viewcode-block" id="set_blackbox_patterns">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_blackbox_patterns">[docs]</a>
-<span class="k">def</span> <span class="nf">set_blackbox_patterns</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_blackbox_patterns</span><span class="p">(</span>
         <span class="n">patterns</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">skip_anonymous</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1208,7 +1243,7 @@
 
 <div class="viewcode-block" id="set_blackboxed_ranges">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_blackboxed_ranges">[docs]</a>
-<span class="k">def</span> <span class="nf">set_blackboxed_ranges</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_blackboxed_ranges</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="p">,</span>
         <span class="n">positions</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">ScriptPosition</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1236,7 +1271,7 @@
 
 <div class="viewcode-block" id="set_breakpoint">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_breakpoint">[docs]</a>
-<span class="k">def</span> <span class="nf">set_breakpoint</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_breakpoint</span><span class="p">(</span>
         <span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span>
         <span class="n">condition</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">typing</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">BreakpointId</span><span class="p">,</span> <span class="n">Location</span><span class="p">]]:</span>
@@ -1268,7 +1303,7 @@
 
 <div class="viewcode-block" id="set_instrumentation_breakpoint">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_instrumentation_breakpoint">[docs]</a>
-<span class="k">def</span> <span class="nf">set_instrumentation_breakpoint</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_instrumentation_breakpoint</span><span class="p">(</span>
         <span class="n">instrumentation</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">BreakpointId</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1290,7 +1325,7 @@
 
 <div class="viewcode-block" id="set_breakpoint_by_url">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_breakpoint_by_url">[docs]</a>
-<span class="k">def</span> <span class="nf">set_breakpoint_by_url</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_breakpoint_by_url</span><span class="p">(</span>
         <span class="n">line_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">url</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">url_regex</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1341,7 +1376,7 @@
 
 <div class="viewcode-block" id="set_breakpoint_on_function_call">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_breakpoint_on_function_call">[docs]</a>
-<span class="k">def</span> <span class="nf">set_breakpoint_on_function_call</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_breakpoint_on_function_call</span><span class="p">(</span>
         <span class="n">object_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">RemoteObjectId</span><span class="p">,</span>
         <span class="n">condition</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">BreakpointId</span><span class="p">]:</span>
@@ -1371,7 +1406,7 @@
 
 <div class="viewcode-block" id="set_breakpoints_active">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_breakpoints_active">[docs]</a>
-<span class="k">def</span> <span class="nf">set_breakpoints_active</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_breakpoints_active</span><span class="p">(</span>
         <span class="n">active</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1391,7 +1426,7 @@
 
 <div class="viewcode-block" id="set_pause_on_exceptions">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_pause_on_exceptions">[docs]</a>
-<span class="k">def</span> <span class="nf">set_pause_on_exceptions</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_pause_on_exceptions</span><span class="p">(</span>
         <span class="n">state</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1412,7 +1447,7 @@
 
 <div class="viewcode-block" id="set_return_value">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_return_value">[docs]</a>
-<span class="k">def</span> <span class="nf">set_return_value</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_return_value</span><span class="p">(</span>
         <span class="n">new_value</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">CallArgument</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1434,7 +1469,7 @@
 
 <div class="viewcode-block" id="set_script_source">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_script_source">[docs]</a>
-<span class="k">def</span> <span class="nf">set_script_source</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_script_source</span><span class="p">(</span>
         <span class="n">script_id</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="p">,</span>
         <span class="n">script_source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">dry_run</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1487,7 +1522,7 @@
 
 <div class="viewcode-block" id="set_skip_all_pauses">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_skip_all_pauses">[docs]</a>
-<span class="k">def</span> <span class="nf">set_skip_all_pauses</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_skip_all_pauses</span><span class="p">(</span>
         <span class="n">skip</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1507,7 +1542,7 @@
 
 <div class="viewcode-block" id="set_variable_value">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.set_variable_value">[docs]</a>
-<span class="k">def</span> <span class="nf">set_variable_value</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_variable_value</span><span class="p">(</span>
         <span class="n">scope_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">variable_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">new_value</span><span class="p">:</span> <span class="n">runtime</span><span class="o">.</span><span class="n">CallArgument</span><span class="p">,</span>
@@ -1537,7 +1572,7 @@
 
 <div class="viewcode-block" id="step_into">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.step_into">[docs]</a>
-<span class="k">def</span> <span class="nf">step_into</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">step_into</span><span class="p">(</span>
         <span class="n">break_on_async_call</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">skip_list</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">LocationRange</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
@@ -1562,7 +1597,7 @@
 
 <div class="viewcode-block" id="step_out">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.step_out">[docs]</a>
-<span class="k">def</span> <span class="nf">step_out</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">step_out</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Steps out of the function call.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1575,7 +1610,7 @@
 
 <div class="viewcode-block" id="step_over">
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.step_over">[docs]</a>
-<span class="k">def</span> <span class="nf">step_over</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">step_over</span><span class="p">(</span>
         <span class="n">skip_list</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">LocationRange</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="n">T_JSON_DICT</span><span class="p">,</span><span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -1599,7 +1634,7 @@
 <span class="nd">@deprecated</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.3&quot;</span><span class="p">)</span>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Debugger.breakpointResolved&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">BreakpointResolved</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BreakpointResolved</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fired when breakpoint is resolved to an actual script and location.</span>
 <span class="sd">    Deprecated in favor of ``resolvedBreakpoints`` in the ``scriptParsed`` event.</span>
@@ -1610,7 +1645,7 @@
     <span class="n">location</span><span class="p">:</span> <span class="n">Location</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakpointResolved</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BreakpointResolved</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">breakpoint_id</span><span class="o">=</span><span class="n">BreakpointId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;breakpointId&#39;</span><span class="p">]),</span>
             <span class="n">location</span><span class="o">=</span><span class="n">Location</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])</span>
@@ -1622,7 +1657,7 @@
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.Paused">[docs]</a>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Debugger.paused&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Paused</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Paused</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1642,7 +1677,7 @@
     <span class="n">async_call_stack_trace_id</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">runtime</span><span class="o">.</span><span class="n">StackTraceId</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Paused</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Paused</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">call_frames</span><span class="o">=</span><span class="p">[</span><span class="n">CallFrame</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">json</span><span class="p">[</span><span class="s1">&#39;callFrames&#39;</span><span class="p">]],</span>
             <span class="n">reason</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]),</span>
@@ -1659,14 +1694,14 @@
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.Resumed">[docs]</a>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Debugger.resumed&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Resumed</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Resumed</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fired when the virtual machine resumed execution.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Resumed</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Resumed</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
 
         <span class="p">)</span></div>
@@ -1677,7 +1712,7 @@
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.ScriptFailedToParse">[docs]</a>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Debugger.scriptFailedToParse&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ScriptFailedToParse</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScriptFailedToParse</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fired when virtual machine fails to parse the script.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1719,7 +1754,7 @@
     <span class="n">embedder_name</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptFailedToParse</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptFailedToParse</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">script_id</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]),</span>
             <span class="n">url</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]),</span>
@@ -1747,7 +1782,7 @@
 <a class="viewcode-back" href="../../../nodriver/cdp/debugger.html#nodriver.cdp.debugger.ScriptParsed">[docs]</a>
 <span class="nd">@event_class</span><span class="p">(</span><span class="s1">&#39;Debugger.scriptParsed&#39;</span><span class="p">)</span>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ScriptParsed</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ScriptParsed</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fired when virtual machine parses script. This event is also fired for all known and uncollected</span>
 <span class="sd">    scripts upon enabling debugger.</span>
@@ -1798,7 +1833,7 @@
     <span class="n">resolved_breakpoints</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">ResolvedBreakpoint</span><span class="p">]]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptParsed</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json</span><span class="p">:</span> <span class="n">T_JSON_DICT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScriptParsed</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">script_id</span><span class="o">=</span><span class="n">runtime</span><span class="o">.</span><span class="n">ScriptId</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;scriptId&#39;</span><span class="p">]),</span>
             <span class="n">url</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]),</span>
@@ -1856,8 +1891,8 @@
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>
