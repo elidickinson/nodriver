@@ -10,6 +10,7 @@ NODRIVER
 > - Proper async task handling in `browser.stop()` and target update handlers
 > - Added `click_count` parameter to `mouse_click()` for double/triple clicks (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Improved `flash_point()` positioning accuracy (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
+> - Added `mouse_move_random()` and `send_keys_random()` for human-like automation (credit: [Connor9994/nodriver](https://github.com/Connor9994/nodriver))
 > - Proper exception tracking and logging in async tasks and proxy forwarding
 > - Fixed `tab.sleep()`, `tab.wait()`, and event handler removal bugs
 > - Improved resource cleanup for browser shutdown, task cancellation, and temp directories

@@ -11,6 +11,7 @@ import logging
 import pathlib
 import secrets
 import typing
+from random import random, uniform
 
 from .. import cdp
 from . import util
@@ -593,6 +594,37 @@ class Element:
         #     cdp.input_.dispatch_mouse_event("mouseReleased", x=center[0], y=center[1])
         # )
 
+    async def mouse_move_random(self):
+        """moves mouse (not click) to a random location within element bounds.
+        when an element has a hover/mouseover effect, this would trigger it.
+        random location between the element's (left,top) and (right,bottom)"""
+        if not self.parent or not self.object_id:
+            self._remote_object = await self._tab.send(
+                cdp.dom.resolve_node(backend_node_id=self.backend_node_id)
+            )
+        try:
+            quads = await self.tab.send(
+                cdp.dom.get_content_quads(object_id=self.remote_object.object_id)
+            )
+            if not quads:
+                logger.debug("could not find position for %s", self)
+                return
+
+            pos = Position(quads[0])
+            x = uniform(pos.left, pos.right)
+            y = uniform(pos.top, pos.bottom)
+
+            await self._tab.send(
+                cdp.input_.dispatch_mouse_event("mouseMoved", x=x, y=y)
+            )
+            await self._tab.sleep(uniform(0.15, 0.35))
+            await self._tab.send(
+                cdp.input_.dispatch_mouse_event("mouseReleased", x=x, y=y)
+            )
+            await self._tab.sleep(uniform(0.15, 0.5))
+        except Exception as e:
+            logger.debug("mouse_move_random failed for %s: %s", self, e)
+
     async def mouse_drag(
         self,
         destination: typing.Union[Element, typing.Tuple[int, int]],
@@ -720,6 +752,19 @@ class Element:
             await self._tab.send(cdp.input_.dispatch_key_event("char", text=char))
             for char in list(text)
         ]
+
+    async def send_keys_random(self, text: str):
+        """
+        send text to an input field, or any other html element,
+        with a random delay between each keystroke to simulate human typing.
+
+        :param text: text to send
+        :return: None
+        """
+        await self.apply("(elem) => elem.focus()")
+        for char in list(text):
+            await self._tab.send(cdp.input_.dispatch_key_event("char", text=char))
+            await self._tab.sleep(random())
 
     async def send_file(self, *file_paths: PathLike):
         """
