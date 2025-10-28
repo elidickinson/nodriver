@@ -1801,6 +1801,7 @@ class Tab(Connection):
         button: str = "left",
         buttons: typing.Optional[int] = 1,
         modifiers: typing.Optional[int] = 0,
+        click_count: int = 1,
         _until_event: typing.Optional[type] = None,
     ):
         """native click on position x,y
@@ -1812,6 +1813,7 @@ class Tab(Connection):
         :param buttons: which button (default 1 = left)
         :param modifiers: *(Optional)* Bit field representing pressed modifier keys.
                 Alt=1, Ctrl=2, Meta/Command=4, Shift=8 (default: 0).
+        :param click_count: how many times to click (single click, double click, triple click)
         :param _until_event: internal. event to wait for before returning
         :return:
         """
@@ -1824,7 +1826,7 @@ class Tab(Connection):
                 modifiers=modifiers,
                 button=cdp.input_.MouseButton(button),
                 buttons=buttons,
-                click_count=1,
+                click_count=click_count,
             )
         )
 
@@ -1836,7 +1838,7 @@ class Tab(Connection):
                 modifiers=modifiers,
                 button=cdp.input_.MouseButton(button),
                 buttons=buttons,
-                click_count=1,
+                click_count=click_count,
             )
         )
 
@@ -1916,12 +1918,13 @@ class Tab(Connection):
 
     async def flash_point(self, x, y, duration=0.5, size=10):
         style = (
-            "position:absolute;z-index:99999999;padding:0;margin:0;"
+            "position:absolute;z-index:2147483647;padding:0;margin:0;"
             "left:{:.1f}px; top: {:.1f}px;"
-            "opacity:1;"
+            "translate:-50% -50%;"
+            "opacity:0;"
             "width:{:d}px;height:{:d}px;border-radius:50%;background:red;"
             "animation:show-pointer-ani {:.2f}s ease 1;"
-        ).format(x - 8, y - 8, size, size, duration)
+        ).format(x, y, size, size, duration)
         script = (
             """
                 var css = document.styleSheets[0];
