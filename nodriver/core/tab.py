@@ -170,6 +170,8 @@ class Tab(Connection):
         super().__init__(websocket_url, target, browser, **kwargs)
         self._dom = None
         self._window_id = None
+        self._prep_headless_lock = asyncio.Lock()
+        self._prep_expert_lock = asyncio.Lock()
 
     @property
     def inspector_url(self):
@@ -210,44 +212,45 @@ class Tab(Connection):
         return await super()._send_oneshot(cmd)
 
     async def _prepare_headless(self):
-
-        if getattr(self, "_prep_headless_done", None):
-            return
-        resp = await self._send_oneshot(
-            cdp.runtime.evaluate(
-                expression="navigator.userAgent",
-            )
-        )
-        if not resp:
-            return
-        response, error = resp
-        if response and response.value:
-            ua = response.value
-            await self._send_oneshot(
-                cdp.network.set_user_agent_override(
-                    user_agent=ua.replace("Headless", ""),
+        async with self._prep_headless_lock:
+            if getattr(self, "_prep_headless_done", None):
+                return
+            resp = await self._send_oneshot(
+                cdp.runtime.evaluate(
+                    expression="navigator.userAgent",
                 )
             )
-        setattr(self, "_prep_headless_done", True)
+            if not resp:
+                return
+            response, error = resp
+            if response and response.value:
+                ua = response.value
+                await self._send_oneshot(
+                    cdp.network.set_user_agent_override(
+                        user_agent=ua.replace("Headless", ""),
+                    )
+                )
+            setattr(self, "_prep_headless_done", True)
 
     async def _prepare_expert(self):
-        if getattr(self, "_prep_expert_done", None):
-            return
-        if self.browser:
-            await self._send_oneshot(cdp.page.enable())
-            await self._send_oneshot(
-                cdp.page.add_script_to_evaluate_on_new_document(
-                    """
-                    console.log("hooking attachShadow");
-                    Element.prototype._attachShadow = Element.prototype.attachShadow;
-                    Element.prototype.attachShadow = function () {
-                        console.log('calling hooked attachShadow')
-                        return this._attachShadow( { mode: "open" } );
-                    };"""
+        async with self._prep_expert_lock:
+            if getattr(self, "_prep_expert_done", None):
+                return
+            if self.browser:
+                await self._send_oneshot(cdp.page.enable())
+                await self._send_oneshot(
+                    cdp.page.add_script_to_evaluate_on_new_document(
+                        """
+                        console.log("hooking attachShadow");
+                        Element.prototype._attachShadow = Element.prototype.attachShadow;
+                        Element.prototype.attachShadow = function () {
+                            console.log('calling hooked attachShadow')
+                            return this._attachShadow( { mode: "open" } );
+                        };"""
+                    )
                 )
-            )
 
-        setattr(self, "_prep_expert_done", True)
+            setattr(self, "_prep_expert_done", True)
 
     async def find(
         self,

@@ -4,9 +4,9 @@
 
 ### High Priority Issues
 
-#### 4. Memory leak: Orphaned transactions (timeout) (line 553)
+#### 1. Memory leak: Orphaned transactions (timeout)
 
-**Location**: `connection.py:549-553`
+**Location**: `connection.py` in `send()` method
 
 ```python
 tx.id = the_id
@@ -31,9 +31,9 @@ except asyncio.TimeoutError:
 
 ---
 
-#### 5. Memory leak: Orphaned transactions (send failure) (line 552)
+#### 2. Memory leak: Orphaned transactions (send failure)
 
-**Location**: `connection.py:547-553`
+**Location**: `connection.py` in `send()` method
 
 ```python
 async with self._lock:
@@ -58,82 +58,11 @@ except Exception:
 
 ---
 
-#### 6. Race condition: handlers dictionary (lines 287, 305, 321, 324, 407-408, 494-500)
-
-**Problem**: `self.handlers` modified from multiple contexts without locking:
-- User calling `add_handler()` / `remove_handler()`
-- `_register_handlers()` during send()
-- `_listener()` reading during events
-
-**Specific TOCTOU bug at line 407-408**:
-```python
-if len(self.handlers[event_type]) == 0:  # CHECK
-    self.handlers.pop(event_type)         # USE - could pop non-empty list if handler added between
-```
-
-**Concurrent modification at line 305**: Removing handler from list while another coroutine might be iterating.
-
-**Impact**: Could remove handlers that were just added, or crash on concurrent modification.
-
-**Fix**: Add `_handlers_lock` or use thread-safe dict operations.
-
----
-
-#### 7. Race condition: enabled_domains duplicates (lines 418-426)
-
-```python
-elif domain_mod not in self.enabled_domains:  # line 418 - CHECK
-    # ...
-    self.enabled_domains.append(domain_mod)   # line 426 - USE
-```
-
-**Problem**: Concurrent `_register_handlers()` calls both see domain not present, both append → duplicates.
-
-**Impact**: Duplicate enable calls to Chrome, list corruption.
-
-**Fix**: Check-and-add atomically inside lock, or use a set.
-
----
-
-#### 8. Race condition: websocket state check (lines 235-238, 543)
-
-```python
-@property
-def closed(self):
-    if not self.websocket:  # UNPROTECTED READ
-        return True
-    return bool(self.websocket.close_code)
-
-# Used at line 543:
-if self.closed:
-    await self.connect()
-```
-
-**Problem**: `connect()` modifies `self._websocket` inside `_connection_lock`, but `closed` reads it without lock.
-
-**Impact**: Race between checking closed state and connection/disconnection.
-
-**Fix**: Either check inside lock or make `closed` property acquire lock.
-
----
-
 ### Medium Priority Issues
 
-#### 9. Inefficient: Sleep after timeout (lines 463-465)
+#### 4. Auto-reconnect fights explicit disconnect
 
-```python
-except asyncio.TimeoutError as e:
-    await asyncio.sleep(0.05)  # why sleep AFTER a 0.05s timeout?
-    continue
-```
-
-**Problem**: `recv()` already waited 0.05s, then we wait another 0.05s. Doubles latency for no reason.
-
-**Fix**: Just `continue` without sleep.
-
----
-
-#### 10. Auto-reconnect fights explicit disconnect (lines 543-544)
+**Location**: `connection.py` in `send()` method
 
 ```python
 if self.closed:
@@ -148,7 +77,11 @@ if self.closed:
 
 ---
 
-#### 11. Bare except in has_exception (line 106)
+### Low Priority Issues
+
+#### 5. Bare except in has_exception
+
+**Location**: `connection.py` in `Transaction.has_exception` property
 
 ```python
 except:
@@ -163,88 +96,9 @@ except:
 
 ---
 
-## nodriver/core/tab.py
+#### 6. Bare exception in EventTransaction.__init__
 
-### High Priority Issues
-
-#### 1. Race condition in _prepare_headless and _prepare_expert (lines 214, 234)
-
-**Location**: `tab.py:212-231, 233-250`
-
-```python
-async def _prepare_headless(self):
-    if getattr(self, "_prep_headless_done", None):  # CHECK
-        return
-    # ... do work ...
-    setattr(self, "_prep_headless_done", True)  # SET
-
-async def _prepare_expert(self):
-    if getattr(self, "_prep_expert_done", None):  # CHECK
-        return
-    # ... do work ...
-    setattr(self, "_prep_expert_done", True)  # SET
-```
-
-**Problem**: TOCTOU bug - multiple concurrent calls could all pass the check before any sets the flag, resulting in duplicate preparation work.
-
-**Impact**: Multiple concurrent calls execute preparation logic simultaneously, potentially causing duplicate CDP calls or race conditions in initialization.
-
-**Fix**: Use proper async locks:
-```python
-async def _prepare_headless(self):
-    if not hasattr(self, '_prep_headless_lock'):
-        self._prep_headless_lock = asyncio.Lock()
-
-    async with self._prep_headless_lock:
-        if getattr(self, "_prep_headless_done", None):
-            return
-        # ... do work ...
-        setattr(self, "_prep_headless_done", True)
-```
-
----
-
-### Low Priority Issues
-
-#### 2. Bare exception handlers (lines 645, 729, 1747, 1754)
-
-**Location**: Multiple locations in `tab.py`
-
-**Lines 645, 729**: Element creation failures
-```python
-try:
-    elem = element.create(node, self, doc)
-except:  # noqa
-    continue
-```
-
-**Lines 1747, 1754**: File cleanup
-```python
-try:
-    os.unlink("screen.jpg")
-except:
-    logger.warning("could not unlink temporary screenshot")
-```
-
-**Problem**: Bare `except:` catches all exceptions including `SystemExit`, `KeyboardInterrupt`, and masks bugs like `AttributeError` or `TypeError`.
-
-**Impact**: Could hide bugs or make debugging difficult. Generally defensive but not best practice.
-
-**Fix**: Catch specific exceptions:
-```python
-except Exception:  # don't catch BaseException (KeyboardInterrupt, SystemExit)
-    continue
-```
-
----
-
-## nodriver/core/connection.py (Additional)
-
-### Low Priority Issues
-
-#### 12. Bare exception in EventTransaction.__init__ (line 160)
-
-**Location**: `connection.py:157-163`
+**Location**: `connection.py` in `EventTransaction.__init__()`
 
 ```python
 def __init__(self, event_object):
@@ -270,13 +124,49 @@ except TypeError:  # expected when passing None to Transaction.__init__
 
 ---
 
+## nodriver/core/tab.py
+
+### Low Priority Issues
+
+#### 2. Bare exception handlers
+
+**Location**: Multiple locations in `tab.py`
+
+**Element creation failures**:
+```python
+try:
+    elem = element.create(node, self, doc)
+except:  # noqa
+    continue
+```
+
+**File cleanup**:
+```python
+try:
+    os.unlink("screen.jpg")
+except:
+    logger.warning("could not unlink temporary screenshot")
+```
+
+**Problem**: Bare `except:` catches all exceptions including `SystemExit`, `KeyboardInterrupt`, and masks bugs like `AttributeError` or `TypeError`.
+
+**Impact**: Could hide bugs or make debugging difficult. Generally defensive but not best practice.
+
+**Fix**: Catch specific exceptions:
+```python
+except Exception:  # don't catch BaseException (KeyboardInterrupt, SystemExit)
+    continue
+```
+
+---
+
 ## nodriver/core/util.py
 
 ### Critical Issues
 
-#### 1. SOCKS proxy protocol parsing bug (line 4651-4658)
+#### 1. SOCKS proxy protocol parsing bug
 
-**Location**: `util.py:4651-4658` inside `ProxyForwarder.handle_socks_request()`
+**Location**: `util.py` inside `ProxyForwarder.handle_socks_request()`
 
 ```python
 async def read(fmt):
@@ -304,7 +194,5 @@ async def read(fmt):
 ```
 
 `readexactly()` guarantees to return exactly N bytes or raise `IncompleteReadError` if the stream ends prematurely.
-
-**Affected lines**: 4660, 4661, 4668, 4672, 4676, 4681, 4683, 4699, 4714 - all calls to `read()` helper.
 
 ---

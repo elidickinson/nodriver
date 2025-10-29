@@ -3,20 +3,16 @@ NODRIVER
 
 > **Fork Improvements**
 >
-> This fork includes stability and reliability enhancements:
+> This fork includes stability, reliability, and performance enhancements:
 > - Race condition fixes in connection handling, target updates, and websocket messaging
+> - Major performance improvement in websocket listener by removing exception-based flow control (eliminates ~20 exceptions/sec per connection)
 > - Fixed concurrent domain removal in handler registration (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Fixed duplicate transaction completion race conditions (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
-> - Proper async task handling in `browser.stop()` and target update handlers
-> - Simplified `browser.stop()` with proper timeouts and registry cleanup
+> - Clean up `browser.stop()` and browser shutdown with proper sync/async handling
 > - Added `click_count` parameter to `mouse_click()` for double/triple clicks (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Improved `flash_point()` positioning accuracy (credit: [isaiah-rps/nodriver](https://github.com/isaiah-rps/nodriver))
 > - Added `mouse_move_random()` and `send_keys_random()` for human-like automation (credit: [Connor9994/nodriver](https://github.com/Connor9994/nodriver))
-> - Proper exception tracking and logging in async tasks and proxy forwarding
 > - Fixed `tab.sleep()`, `tab.wait()`, and event handler removal bugs
-> - Improved resource cleanup for browser shutdown, task cancellation, and temp directories
-> - Port reuse optimization and more resilient browser startup
-> - Performance: major improvement in websocket listener by removing exception-based flow control (eliminates ~20 exceptions/sec per connection)
 
 ### nodriver provides next level async webscraping and browser automation library for python with an easy interface which Just Makes Sense ™
 

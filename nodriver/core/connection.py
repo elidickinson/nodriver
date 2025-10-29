@@ -87,10 +87,9 @@ class Transaction(asyncio.Future):
         self.__cdp_obj__ = cdp_obj
         self.connection = None
 
-        self.method, *params = next(self.__cdp_obj__).values()
-        if params:
-            params = params.pop()
-        self.params = params
+        cmd = next(self.__cdp_obj__)
+        self.method = cmd["method"]
+        self.params = cmd.get("params", {})
 
     @property
     def message(self):
@@ -344,6 +343,23 @@ class Connection(metaclass=CantTouchThis):
                     if evt_dom in self.handlers:
                         del self.handlers[evt_dom]
 
+    async def _connect_unlocked(self):
+        """Internal connection logic without lock acquisition"""
+        if not self.websocket or bool(self.websocket.close_code):
+            try:
+                self._websocket = await websockets.asyncio.client.connect(
+                    self.websocket_url,
+                    ping_timeout=PING_TIMEOUT,
+                    max_size=MAX_SIZE,
+                )
+                self._listener_task = asyncio.ensure_future(self._listener())
+
+            except (Exception,) as e:
+                logger.debug("exception during opening of websocket : %s", e)
+                raise
+
+            await self._register_handlers()
+
     async def connect(self, **kw):
         """
         opens the websocket connection. should not be called manually by users
@@ -351,20 +367,7 @@ class Connection(metaclass=CantTouchThis):
         :return:
         """
         async with self._connection_lock:
-            if not self.websocket or bool(self.websocket.close_code):
-                try:
-                    self._websocket = await websockets.asyncio.client.connect(
-                        self.websocket_url,
-                        ping_timeout=PING_TIMEOUT,
-                        max_size=MAX_SIZE,
-                    )
-                    self._listener_task = asyncio.ensure_future(self._listener())
-
-                except (Exception,) as e:
-                    logger.debug("exception during opening of websocket : %s", e)
-                    raise
-
-                await self._register_handlers()
+            await self._connect_unlocked()
 
     async def disconnect(self):
         """
@@ -571,8 +574,9 @@ class Connection(metaclass=CantTouchThis):
             when multiple calls to connection.send() are made
         :return:
         """
-        if self.closed:
-            await self.connect()
+        # Check websocket state inside lock to avoid race with connect()/disconnect()
+        async with self._connection_lock:
+            await self._connect_unlocked()
         if not _is_update:
             await self._register_handlers()
         tx = Transaction(cdp_obj)
