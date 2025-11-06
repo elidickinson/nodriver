@@ -578,6 +578,8 @@ class Browser:
         return grid
 
     async def _get_targets(self) -> List[cdp.target.TargetInfo]:
+        if not self.connection:
+            return []
         info = await self.connection.send(cdp.target.get_targets(), _is_update=True)
         return info
 
