@@ -481,7 +481,6 @@ class Browser:
             await self.connection.send(cdp.target.set_discover_targets(discover=True))
 
         await self.update_targets()
-        await self
 
     async def grant_all_permissions(self):
         """
