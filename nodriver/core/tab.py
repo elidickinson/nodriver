@@ -1232,33 +1232,7 @@ class Tab(Connection):
         )
 
     async def wait(self, t: Union[int, float] = 0.5):
-
-        # await self.browser.wait()
-        event = asyncio.Event()
-        wait_events = [
-            cdp.page.FrameStoppedLoading,
-            cdp.page.FrameDetached,
-            cdp.page.FrameNavigated,
-            cdp.page.LifecycleEvent,
-            cdp.page.LoadEventFired,
-        ]
-
-        handler = lambda ev: event.set()
-
-        self.add_handler(wait_events, handler=handler)
-        try:
-            # wait for a wait_events event to fire for up to t seconds
-            done, pending = await asyncio.wait(
-                [
-                    asyncio.ensure_future(event.wait()),
-                    asyncio.ensure_future(asyncio.sleep(t)),
-                ],
-                return_when=asyncio.FIRST_COMPLETED,
-            )
-
-            [p.cancel() for p in pending]
-        finally:
-            self.remove_handler(wait_events, handler=handler)
+        return await self.sleep(t)
 
     def __await__(self):
         return self.wait().__await__()

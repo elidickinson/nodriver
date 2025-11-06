@@ -444,7 +444,7 @@ class Connection(metaclass=CantTouchThis):
                     enabled_domains.remove(domain_mod)
                 continue
             elif domain_mod not in self.enabled_domains:
-                if domain_mod in (cdp.target, cdp.storage):
+                if domain_mod in (cdp.target, cdp.storage, cdp.input_):
                     # by default enabled
                     continue
                 should_enable = False
